@@ -23,19 +23,10 @@
    <title>index.php</title>
 </head>
 <body>
-   <?php
-      if($username){
-         if($isAdmin){
-            header("Location: admin.php");
-         }
-         else{
-            header("Location: member.php");
-         }
-      }
-   ?>
+
    <div id = "blur">
       <div>
-         <?php include_once('navbar_visiter.php'); ?>
+         <?php include_once('navbar.php'); ?>
       </div>
 
       <?php
@@ -77,10 +68,15 @@
             <div id = 'popup_genres'></div>
             <div id = 'popup_directors'></div>
             <div id = 'popup_casts'></div>
-            <div id = 'popup_btn'><a href='#' onclick = 'unToggle()'>Close</a></div>
+            <?php 
+               if($isAdmin) echo "<div id = 'popup_edit_btn' class = 'popup_btn'><a href='#' onclick = ''>Edit</a></div>"
+            ?>
+            <div id = 'popup_close_btn' class = 'popup_btn'><a href='#' onclick = 'unToggle()'>Close</a></div>
       </div>
    </div>
 
+   <!-- test rating -->
+   <!--
    <div>
       <form method = "post" action = "updateRating.php">
          Star: <input type = "text" name = "star"><br>
@@ -89,6 +85,7 @@
       </form>
    </div>
 
+   
    <div class="stars">
    <form action="">
       <input class="star star-5" id="star-5" type="radio" name="star"/>
@@ -102,7 +99,7 @@
       <input class="star star-1" id="star-1" type="radio" name="star"/>
       <label class="star star-1" for="star-1"></label>
    </form>
-   </div>
+   </div> -->
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>

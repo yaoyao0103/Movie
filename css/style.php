@@ -280,3 +280,10 @@ label.star:before {
 	background-color: black;
 	color: white;
 }
+
+.notfind {
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+	font-size: 40px;
+}

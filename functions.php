@@ -93,7 +93,7 @@
             $result .= "</div>";
         }
         else{
-            $result = "no result";
+            $result = "<div class = 'notfind'>No result!</div>";
         }
         echo $result;
     }

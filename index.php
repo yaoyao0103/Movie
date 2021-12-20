@@ -69,7 +69,7 @@
             <div id = 'popup_directors'></div>
             <div id = 'popup_casts'></div>
             <?php 
-               if($isAdmin) echo "<div id = 'popup_edit_btn' class = 'popup_btn'><a href='#' onclick = ''>Edit</a></div>"
+               if($isAdmin) echo "<div id = 'popup_edit_btn' class = 'popup_btn'><a href='./edit_movie.php' onclick = ''>Edit</a></div>"
             ?>
             <div id = 'popup_close_btn' class = 'popup_btn'><a href='#' onclick = 'unToggle()'>Close</a></div>
       </div>

@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `actors` (
-  `actor_id` smallint(6) NOT NULL,
+  `actor_id` smallint(6) NOT N  ULL,
   `actor_first_name` varchar(255) DEFAULT NULL,
   `actor_last_name` varchar(255) DEFAULT NULL,
   `actor_gender` varchar(1) DEFAULT NULL

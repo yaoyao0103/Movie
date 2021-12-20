@@ -31,7 +31,7 @@ body {
 	position: relative;
 	max-width: 1100px;
 	margin: 0 auto;
-	padding: 80px 20px;
+	padding: 60px 20px;
 }
 
 .card {
@@ -256,4 +256,27 @@ label.star:before {
 
 #search-btn {
 	font-size: 15px;
+}
+
+.insert-movie {
+	display: flex;
+	justify-content: right;
+	padding-right: 50px;
+	font-size: 60px;
+}
+
+.insert-movie-btn {
+	padding: 15px 15px;
+	line-height: 40px;
+	background-color: white;
+	border-radius: 50%;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	color: black;
+	transition: all .35s;
+}
+
+.insert-movie-btn:hover {
+	text-decoration: none;
+	background-color: black;
+	color: white;
 }

@@ -11,13 +11,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Login page </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="css/style.php">
+    <link rel="stylesheet" href="css/login_style.php">
+    
+    <title> Login page </title>
 </head>
 
 <body>
+    <div>
+         <?php include_once('navbar_no_search.php'); ?>
+    </div>
+
     <?php
         if($username){ // already logged in
             if($isAdmin){ // is administrator
@@ -36,7 +43,7 @@
                 //make sure info provided
                 if($username){ 
                     if($password){
-                        $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
+                        $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
                         $query = mysqli_query($conn, "SELECT * FROM users WHERE username='$username'"); // query for matching username
                         $numrows = mysqli_num_rows($query); // number of result
                         if($numrows == 1){ // have one matching data
@@ -72,18 +79,19 @@
             echo
             "<div class='userInfo-wrap'>
                 <div class='userInfo-html'>
+                    <label class='sign-in-label'>Sign In</label>
                     <div class='userInfo-form'>
-                        <form class='sign-in-htm' method='post' action='./login.php'>
+                        <form class='sign-in-html' method='post' action='./login.php'>
                             <div class='notice'>$errormsg</div>
                             <div class='group'>
-                                <label for='user' class='label'>Username</label>
+                                <label for='user' class='label'>Username:</label>
                                 <input id='user' type='text' class='input' name = 'username'>
                             </div>
                             <div class='group'>
-                                <label for='pass' class='label'>Password</label>
+                                <label for='pass' class='label'>Password :</label>
                                 <input id='pass' type='password' class='input' data-type='password' name='password'>
                             </div>
-                            <div class='group top-space'>
+                            <div>
                                 <input type='submit' class='button' value='Sign In' name='loginBtn' >
                             </div>
                             <div class='hr'></div>

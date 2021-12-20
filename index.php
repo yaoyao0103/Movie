@@ -6,7 +6,7 @@
    $isAdmin = $_SESSION['isAdmin'];
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
    <!-- Required meta tags -->
@@ -74,9 +74,16 @@
             <div id = 'popup_close_btn' class = 'popup_btn'><a href='#' onclick = 'unToggle()'>Close</a></div>
       </div>
    </div>
+   <div>
+      <?php
+         if($isAdmin)
+            echo 
+               "<div class = 'insert-movie'><a class = 'insert-movie-btn' href='./insert_movie.php'>+</a></div>"
+      ?>
+   </div>
 
    <!-- test rating -->
-   <!--
+<!--    
    <div>
       <form method = "post" action = "updateRating.php">
          Star: <input type = "text" name = "star"><br>
@@ -99,11 +106,11 @@
       <input class="star star-1" id="star-1" type="radio" name="star"/>
       <label class="star star-1" for="star-1"></label>
    </form>
-   </div> -->
+   </div>
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
    <script src="js/tilt.js"></script>
+-->
 </body>
 </html>
-

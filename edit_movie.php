@@ -22,6 +22,11 @@
     <title>Insert Movie</title>
 </head>
 <body>
+    <?php
+        if(!$isAdmin){
+            header("Location: index.php");
+        }
+    ?>
     <div>
          <?php include_once('navbar_no_search.php'); ?>
     </div>

@@ -1,6 +1,6 @@
 <?php 
     function generateCards($sql){
-        $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
+        $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
         mysqli_set_charset($conn,"utf8");
 
         $num_per_page = 12; // total item per page

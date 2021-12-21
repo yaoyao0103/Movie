@@ -107,10 +107,9 @@
       <label class="star star-1" for="star-1"></label>
    </form>
    </div>
-
+      -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
    <script src="js/tilt.js"></script>
--->
 </body>
 </html>

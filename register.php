@@ -1,5 +1,5 @@
 <?php
-    error_reporting(0);
+    //error_reporting(0);
     $errormsg = "";
 ?>
 <!DOCTYPE html>
@@ -32,7 +32,7 @@
                     if($password){
                         if($retypePassword){
                             if($password == $retypePassword){
-                                $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
+                                $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
                                 $query = mysqli_query($conn, "SELECT * FROM users WHERE username='$username'"); // query for matching username
                                 $numrows = mysqli_num_rows($query); // number of result
                                 if($numrows == 0){ // have no result: there is no exist the same username
@@ -102,10 +102,10 @@
                             </div>
                             <div class='group'>
                                 <label for='pass' class='label'>Retype :</label>
-                                <input id='pass' type='password' class='input' data-type='password' name='password'>
+                                <input id='pass' type='password' class='input' data-type='password' name='retypePassword'>
                             </div>
                             <div>
-                                <input type='submit' class='button-register' value='Sign Up' name='loginBtn' >
+                                <input type='submit' class='button-register' value='Sign Up' name='registerBtn' >
                             </div>
                             <div class='hr'></div>
                         </form>

@@ -53,7 +53,7 @@
                                     $numofid=0;
                                     $id=0;
                                     while($numofid==0){
-                                        $id=mt_rand(0,99999);
+                                        $id=mt_rand(0,1000);
                                         $query = mysqli_query($conn, "SELECT * FROM movies WHERE movie_id=$id"); // query for matching moviename
                                         $numrows = mysqli_num_rows($query);
                                         if($numrows == 0)//判斷id是否存在
@@ -63,6 +63,7 @@
                                     $query = mysqli_query($conn,"SELECT * FROM movies WHERE movie_id=$id");
                                     $numrows = mysqli_num_rows($query); // number of result'
                                     if($numrows == 1){ // have one result
+                                        $_SESSION['movieid'] = $id;
                                         $errormsg = "Create success";
                                     }else
                                         $errormsg = "An error has occurred. Your moive was not created";

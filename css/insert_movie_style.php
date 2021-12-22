@@ -4,11 +4,32 @@
 
 .movie-wrapper {
     position: relative;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-column-gap: 50px;
+    display: flex;
+    justify-content: center;
     padding: 60px 40px;
     text-align: center;
+}
+
+.actor-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-flow: dense;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.actor-form {
+    border: solid #FFFFAB;
+    border-width: 1px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .movie-form {
@@ -26,17 +47,21 @@
 
 .movie-input-form {
     text-align: right;
-    margin-right: 60px;
 }
-
 
 .movie-group {
     margin-bottom: 20px;
 }
 
+.label {
+    margin-right: 5px;
+}
+
 .input {
     border-radius: 5px;
-    border: none;
+    border: 1px white solid;
+    background-color: rgb(35,35,35);
+    color: white;
 }
 
 .insert-info {
@@ -84,5 +109,26 @@
 .delete-info-btn:hover {
     background-color: rgb(35,35,35);
     color: #FFABAB;
+    text-decoration: none;
+}
+
+.edit-info-btn {
+    margin: 20px;
+    background-color: #DEFFDE;
+    color: black;
+    width: 10%;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    border: solid #ABFFAB;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 5px;
+    transition: all .35s;
+}
+
+.edit-info-btn:hover {
+    background-color: rgb(35,35,35);
+    color: #ABFFAB;
     text-decoration: none;
 }

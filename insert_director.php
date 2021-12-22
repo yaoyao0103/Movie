@@ -27,28 +27,20 @@
     </div>
     <div class="movie-wrapper">
         <div class="movie-form">
-            <label class="movie">電影</label>
+            <label class="movie">導演</label>
             <form method="post" action="" class="movie-input-form">
-                <!-- <div class='notice'>$errormsg</div> -->
+                <!-- <div class='notice'>$errormsg</div>  -->
                 <div class='movie-group'>
                     <label for='user' class='label'>電影名稱:</label>
-                    <input id='movieName' type='text' class='input' name = 'movieName'>
+                    <input id='user' type='text' class='input' name = 'username'>
                 </div>
                 <div class='movie-group'>
-                    <label for='user' class='label'>上映年(西元):</label>
-                    <input id='year' type='text' class='input' name = 'year'>
+                    <label for='user' class='label'>First Name:</label>
+                    <input id='user' type='text' class='input' name = 'username'>
                 </div>
                 <div class='movie-group'>
-                    <label for='user' class='label'>播放時間(分鐘):</label>
-                    <input id='duration' type='text' class='input' name = 'duration'>
-                </div>
-                <div class='movie-group'>
-                    <label for='user' class='label'>電影分類:</label>
-                    <input id='genre' type='text' class='input' name = 'genre'>
-                </div>
-                <div class='movie-group'>
-                    <label for='user' class='label'>圖片:</label>
-                    <input id='photo' type='text' class='input' name = 'photo'>
+                    <label for='user' class='label'>Last Name:</label>
+                    <input id='user' type='text' class='input' name = 'username'>
                 </div>
                 <div class='hr'></div>
             </form>
@@ -56,8 +48,7 @@
     </div>
     <footer class = 'insert-info'>
         <a href="./index.php" class="delete-info-btn">取消</a>
-        <a href="#" class="edit-info-btn">儲存</a>
-        <a href="./edit_director.php" class="insert-info-btn">下一步</a>
+        <a href="./insert_actor.php" class="insert-info-btn">下一步</a>
     </footer>
 </body>
 </html>

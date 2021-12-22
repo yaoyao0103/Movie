@@ -25,10 +25,10 @@
     <div>
          <?php include_once('navbar_no_search.php'); ?>
     </div>
-    <div class="movie-wrapper">
-        <div class="movie-form">
-            <label class="movie">導演</label>
-            <form method="post" action="" class="movie-input-form">
+    <div class='movie-wrapper'>
+        <div class='movie-form'>
+            <label class='movie'>導演</label>
+            <form method='post' action='./insert_director.php' class='movie-input-form'>
                 <!-- <div class='notice'>$errormsg</div>  -->
                 <div class='movie-group'>
                     <label for='user' class='label'>電影名稱:</label>
@@ -42,13 +42,15 @@
                     <label for='user' class='label'>Last Name:</label>
                     <input id='user' type='text' class='input' name = 'username'>
                 </div>
+                
+                <div class = 'insert-info'>
+                    <a href='./index.php' class='delete-info-btn'>取消</a>
+                    <input type='submit' class='insert-info-btn' value='下一步' name='insertDirectorBtn'>
+                </div>
+
                 <div class='hr'></div>
             </form>
         </div>
     </div>
-    <form class = 'insert-info' method='post' action='./insert_director.php'>
-        <a href="./index.php" class="delete-info-btn">取消</a>
-        <input type='submit' class="insert-info-btn" value='下一步' name='insertDirectorBtn'>
-    </form>
 </body>
 </html>

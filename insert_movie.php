@@ -83,11 +83,11 @@
                 $errormsg ="You must enter your moviename .";
          }
          echo
-         "<div class='movie-wrapper'>
+         " <div class='movie-wrapper'>
          <div class='movie-form'>
              <label class='movie'>電影</label>
-             <form method='post' action='' class='movie-input-form'>
-                 <div class='notice'>$errormsg</div>
+             <form method='post' action='./insert_movie.php' class='movie-input-form'>
+                 <!-- <div class='notice'>$errormsg</div> -->
                  <div class='movie-group'>
                      <label for='user' class='label'>電影名稱:</label>
                      <input id='movieName' type='text' class='input' name = 'movieName'>
@@ -108,16 +108,18 @@
                      <label for='user' class='label'>圖片:</label>
                      <input id='photo' type='text' class='input' name = 'photo'>
                  </div>
-                 <a href='./index.php' class='delete-info-btn'>取消</a>
-         <input type='submit' class='insert-info-btn' value='下一步' name='insertBtn'>
+ 
+                 <div class = 'insert-info'>
+                     <a href='./index.php' class='delete-info-btn'>取消</a>
+                     <input type='submit' class='insert-info-btn' value='下一步' name='insertBtn'>
+                 </div>
+ 
                  <div class='hr'></div>
              </form>
          </div>
-     </div>
-     <form class = 'insert-info' method='post' action='./insert_movie.php'>
-         
-     </form>";
+     </div>";
     ?> 
     
+
 </body>
 </html>

@@ -70,10 +70,10 @@
 }
 
 .insert-info-btn {
-    margin: 20px;
+    margin: 10px;
     background-color: #FFFFDE;
     color: black;
-    width: 10%;
+    width: 50%;
     text-align: center;
     border-radius: 5px;
     font-weight: bold;
@@ -92,10 +92,10 @@
 
 
 .delete-info-btn {
-    margin: 20px;
+    margin: 10px;
     background-color: #FFDEDE;
     color: black;
-    width: 10%;
+    width: 50%;
     text-align: center;
     border-radius: 5px;
     font-weight: bold;
@@ -113,10 +113,10 @@
 }
 
 .edit-info-btn {
-    margin: 20px;
+    margin: 10px;
     background-color: #DEFFDE;
     color: black;
-    width: 10%;
+    width: 50%;
     text-align: center;
     border-radius: 5px;
     font-weight: bold;
@@ -130,5 +130,26 @@
 .edit-info-btn:hover {
     background-color: rgb(35,35,35);
     color: #ABFFAB;
+    text-decoration: none;
+}
+
+.confirm-info-btn {
+    margin: 10px;
+    background-color: #FFFFDE;
+    color: black;
+    width: 10%;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    border: solid #FFFFAB;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 5px;
+    transition: all .35s;
+}
+
+.confirm-info-btn:hover {
+    background-color: rgb(35,35,35);
+    color: #FFFFAB;
     text-decoration: none;
 }

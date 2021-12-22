@@ -25,10 +25,10 @@
     <div>
          <?php include_once('navbar_no_search.php'); ?>
     </div>
-    <div class="actor-wrapper">
-        <div class="actor-form">
-            <label class="movie">演員</label>
-            <form method="post" action="" class="movie-input-form">
+    <div class='movie-wrapper'>
+        <div class='movie-form'>
+            <label class='movie'>演員</label>
+            <form method='post' action='./insert_actor.php' class='movie-input-form'>
                 <!--  <div class='notice'>$errormsg</div> -->
                 <div class='movie-group'>
                     <label for='user' class='label'>First Name:</label>
@@ -42,16 +42,19 @@
                     <label for='user' class='label'>角色:</label>
                     <input id='user' type='text' class='input' name = 'username'>
                 </div>
+
+                <div class = 'insert-info'>
+                    <a href='./index.php' class='delete-info-btn'>取消</a>
+                    <input type='submit' class='edit-info-btn' value='儲存/繼續新增' name='insertActorBtn'>
+                    <!-- <a href='./index.php' class='insert-info-btn'>下一步</a> -->
+                </div>
+
                 <div class='hr'></div>
             </form>
         </div>
     </div>
-    <div class = 'insert-movie'>
-        <a class = 'insert-movie-btn' href='#'>+</a>
+    <div class = 'insert-info'>
+        <a href="./index.php" class="confirm-info-btn">確認</a>
     </div>
-    <form class = 'insert-info' method='post' action='./insert_actor.php'>
-        <a href="./index.php" class="delete-info-btn">取消</a>
-        <input type='submit' class="insert-info-btn" value='儲存' name='insertActorBtn'>
-    </form>
 </body>
 </html>

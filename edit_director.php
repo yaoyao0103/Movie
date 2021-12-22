@@ -31,10 +31,6 @@
             <form method="post" action="" class="movie-input-form">
                 <!-- <div class='notice'>$errormsg</div>  -->
                 <div class='movie-group'>
-                    <label for='user' class='label'>電影名稱:</label>
-                    <input id='user' type='text' class='input' name = 'username'>
-                </div>
-                <div class='movie-group'>
                     <label for='user' class='label'>First Name:</label>
                     <input id='user' type='text' class='input' name = 'username'>
                 </div>

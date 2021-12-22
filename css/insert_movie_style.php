@@ -4,10 +4,11 @@
 
 .movie-wrapper {
     position: relative;
-    display: flex;
-    justify-content: center;
-    padding: 60px 40px;
+    padding: 10px 40px;
+    padding-left: 140px;
+    max-width: 1400px;
     text-align: center;
+    display:inline-flex;
 }
 
 .actor-wrapper {
@@ -38,6 +39,11 @@
     border-width: 1px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    width: 350px;
+    height: 350px;
+    float: left;
 }
 
 .movie {
@@ -54,7 +60,7 @@
 }
 
 .label {
-    margin-right: 5px;
+    
 }
 
 .input {
@@ -65,6 +71,15 @@
 }
 
 .insert-info {
+    position: relative;
+    display: flex;
+    padding: 30px;
+    width: 1200px;
+    justify-content: center;
+}
+
+.delete-info {
+    position: relative;
     display: flex;
     justify-content: center;
 }

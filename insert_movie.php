@@ -23,8 +23,13 @@
 </head>
 <body>
     <div>
-         <?php include_once('navbar_no_search.php'); ?>
+        <?php include_once('navbar_no_search.php'); ?>
     </div>
+    <?php
+        if($_POST['insertMovieBtn']){
+            header("Location:insert_actor.php");
+        }
+    ?>
     <div class='movie-wrapper'>
         <div class='movie-form'>
             <label class='movie'>電影</label>

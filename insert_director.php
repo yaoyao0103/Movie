@@ -1,9 +1,9 @@
 <?php
-   error_reporting(0);
-   require('functions.php');
-   session_start();
-   $username = $_SESSION['username'];
-   $isAdmin = $_SESSION['isAdmin'];
+    error_reporting(0);
+    require('functions.php');
+    session_start();
+    $username = $_SESSION['username'];
+    $isAdmin = $_SESSION['isAdmin'];
 ?>
 
 <!DOCTYPE html>

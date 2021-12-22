@@ -46,10 +46,10 @@
             </form>
         </div>
     </div>
-    <footer class = 'insert-info'>
+    <form class = 'insert-info' method='post' action='./edit_director.php'>
         <a href="./index.php" class="delete-info-btn">取消</a>
-        <a href="#" class="edit-info-btn">儲存</a>
+        <input type='submit' class="edit-info-btn" value='儲存' name='editDirectorBtn'>
         <a href="./edit_actor.php" class="insert-info-btn">下一步</a>
-    </footer>
+    </form>
 </body>
 </html>

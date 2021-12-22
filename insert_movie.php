@@ -54,9 +54,9 @@
             </form>
         </div>
     </div>
-    <footer class = 'insert-info'>
+    <form class = 'insert-info' method='post' action='./insert_movie.php'>
         <a href="./index.php" class="delete-info-btn">取消</a>
-        <a href="./insert_director.php" class="insert-info-btn">下一步</a>
-    </footer>
+        <input type='submit' class="insert-info-btn" value='下一步' name='insertMovieBtn'>
+    </form>
 </body>
 </html>

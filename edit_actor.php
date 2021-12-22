@@ -49,9 +49,9 @@
     <div class = 'insert-movie'>
         <a class = 'insert-movie-btn' href='#'>+</a>
     </div>
-    <footer class = 'insert-info'>
+    <form class = 'insert-info' method='post' action='./edit_actor.php'>
         <a href="./index.php" class="delete-info-btn">取消</a>
-        <a href="#" class="edit-info-btn">儲存</a>
-    </footer>
+        <input type='submit' class="edit-info-btn" value='儲存' name='editActorBtn'>
+    </form>
 </body>
 </html>

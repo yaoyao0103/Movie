@@ -46,7 +46,6 @@
                 <div class = 'insert-info'>
                     <a href='./index.php' class='delete-info-btn'>取消</a>
                     <input type='submit' class='edit-info-btn' value='儲存/繼續新增' name='insertActorBtn'>
-                    <!-- <a href='./index.php' class='insert-info-btn'>下一步</a> -->
                 </div>
 
                 <div class='hr'></div>

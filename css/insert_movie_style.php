@@ -153,3 +153,24 @@
     color: #FFFFAB;
     text-decoration: none;
 }
+
+.cancel-info-btn {
+    margin: 10px;
+    background-color: #FFDEDE;
+    color: black;
+    width: 10%;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    border: solid #FFABAB;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 5px;
+    transition: all .35s;
+}
+
+.cancel-info-btn:hover {
+    background-color: rgb(35,35,35);
+    color: #FFABAB;
+    text-decoration: none;
+}

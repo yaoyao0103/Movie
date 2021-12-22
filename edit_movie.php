@@ -50,14 +50,19 @@
                     <label for='user' class='label'>圖片:</label>
                     <input id='photo' type='text' class='input' name = 'photo'>
                 </div>
+
+                <div class = 'insert-info'>
+                    <input type='button' class='delete-info-btn' value='刪除' name='deleteActorBtn'>
+                    <input type='submit' class='edit-info-btn' value='儲存' name='insertActorBtn'>
+                </div>
                 <div class='hr'></div>
             </form>
         </div>
     </div>
-    <form class = 'insert-info' method='post' action='./edit_movie.php'>
-        <a href="./index.php" class="delete-info-btn">取消</a>
-        <input type='submit' class="edit-info-btn" value='儲存' name='editMovieBtn'>
-        <a href="./edit_director.php" class="insert-info-btn">下一步</a>
-    </form>
+    
+    <div class = 'insert-info'>
+        <a href='./index.php' class='cancel-info-btn'>取消</a>
+        <a href="./edit_director.php" class="confirm-info-btn">下一步</a>
+    </div>
 </body>
 </html>

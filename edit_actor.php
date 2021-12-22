@@ -43,15 +43,21 @@
                     <input id='user' type='text' class='input' name = 'username'>
                 </div>
                 <div class='hr'></div>
+
+                <div class = 'insert-info'>
+                    <input type='button' class='delete-info-btn' value='刪除' name='deleteActorBtn'>
+                    <input type='submit' class='edit-info-btn' value='儲存' name='insertActorBtn'>
+                </div>
+                
             </form>
         </div>
     </div>
     <div class = 'insert-movie'>
         <a class = 'insert-movie-btn' href='#'>+</a>
     </div>
-    <form class = 'insert-info' method='post' action='./edit_actor.php'>
-        <a href="./index.php" class="delete-info-btn">取消</a>
-        <input type='submit' class="edit-info-btn" value='儲存' name='editActorBtn'>
-    </form>
+    <div class = 'insert-info'>
+        <a href='./index.php' class='cancel-info-btn'>取消</a>
+        <a href="./index.php" class="confirm-info-btn">確認</a>
+    </div>
 </body>
 </html>

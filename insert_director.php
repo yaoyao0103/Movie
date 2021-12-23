@@ -1,9 +1,10 @@
 <?php
-    error_reporting(0);
-    require('functions.php');
-    session_start();
-    $username = $_SESSION['username'];
-    $isAdmin = $_SESSION['isAdmin'];
+   //error_reporting(0);
+   require('functions.php');
+   session_start();
+   $username = $_SESSION['username'];
+   $movieid = $_SESSION['movieId'];
+   $isAdmin = $_SESSION['isAdmin'];
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +24,7 @@
 </head>
 <body>
     <div>
-        <?php include_once('navbar_no_search.php'); ?>
+         <?php include_once('navbar_no_search.php'); ?>
     </div>
     <?php
         if($_POST['insertBtn']){
@@ -42,11 +43,11 @@
             if($directorFname){
                 if($directorLname){
                     $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
-                    $query = mysqli_query($conn, "SELECT * FROM directors WHERE director_first_name='$directorFname' and director_lirst_name='$directorLname' "); // query for matching directorname
+                    $query = mysqli_query($conn, "SELECT * FROM directors WHERE director_first_name='$directorFname' and director_last_name='$directorLname' "); // query for matching directorname
                     $numrows = mysqli_num_rows($query); // number of result
-                    if(numrows==0){
-                        $numofid=0;
-                        $directorid=0;
+                    $numofid=0;
+                    $directorid=0;
+                    if($numrows==0){
                         while($numofid==0){
                             $directorid=mt_rand(0,1000);
                             $query = mysqli_query($conn, "SELECT * FROM directors WHERE director_id=$directorid"); // query for matching directorid
@@ -67,7 +68,7 @@
                     $query = mysqli_query($conn,"SELECT * FROM movies_directors WHERE director_id=$directorid and movie_id=$movieid");
                     $numrows = mysqli_num_rows($query); // number of result'
                     if($numrows == 1){ // have one result
-                        $errormsg = "Create movie director success";
+                        header('Location:index.php');
                     }else
                         $errormsg = "An error has occurred. Your movie direcotr was not created";          
                 }else
@@ -94,7 +95,6 @@
                     <a href='./index.php' class='delete-info-btn'>取消</a>
                     <input type='submit' class='insert-info-btn' value='下一步' name='insertBtn'>
                 </div>
-
                 <div class='hr'></div>
             </form>
         </div>

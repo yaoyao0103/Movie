@@ -1,10 +1,9 @@
 <?php
-   error_reporting(0);
-   require('functions.php');
-   session_start();
-   $username = $_SESSION['username'];
-   $movieid = $_SESSION['movieid'];
-   $isAdmin = $_SESSION['isAdmin'];
+    error_reporting(0);
+    require('functions.php');
+    session_start();
+    $username = $_SESSION['username'];
+    $isAdmin = $_SESSION['isAdmin'];
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +23,7 @@
 </head>
 <body>
     <div>
-         <?php include_once('navbar_no_search.php'); ?>
+        <?php include_once('navbar_no_search.php'); ?>
     </div>
     <?php
         if($_POST['insertBtn']){

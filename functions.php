@@ -1,6 +1,6 @@
 <?php 
     function generateCards($sql){
-        $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
+        $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
         mysqli_set_charset($conn,"utf8");
 
         $num_per_page = 12; // total item per page
@@ -51,7 +51,7 @@
                     <div class=\"movie_year\"> Year: {$movie_year}年</div> 
                     <div class=\"movie_time\"> Time: {$movie_time}分鐘</div> 
                     <div class=\"movie_genres\"> Genres: $movie_genres</div> 
-                </div>";
+                </div></div>";
 
                 $result .= $content;
             }

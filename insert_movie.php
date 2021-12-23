@@ -23,7 +23,7 @@
 </head>
 <body>
     <div>
-         <?php include_once('navbar_no_search.php'); ?>
+        <?php include_once('navbar_no_search.php'); ?>
     </div>
     <?php
         if($_POST['insertBtn']){
@@ -45,7 +45,7 @@
                     if($movietime){
                         if($moviegenres){
                             if($movieurl){
-                                $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
+                                $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
                                 $query = mysqli_query($conn, "SELECT * FROM movies WHERE movie_title='$moviename'"); // query for matching moviename
                                 $numrows = mysqli_num_rows($query); // number of result
                                 if($numrows == 0){ // have no result: there is no exist the same moviename
@@ -63,8 +63,9 @@
                                     $query = mysqli_query($conn,"SELECT * FROM movies WHERE movie_id=$id");
                                     $numrows = mysqli_num_rows($query); // number of result'
                                     if($numrows == 1){ // have one result
-                                        $_SESSION['movieid'] = $id;
                                         $errormsg = "Create success";
+                                        $_SESSION['movieId'] =  $id;
+                                        header('Location: insert_actor.php');
                                     }else
                                         $errormsg = "An error has occurred. Your moive was not created";
                                 }else
@@ -83,11 +84,11 @@
                 $errormsg ="You must enter your moviename .";
          }
          echo
-         " <div class='movie-wrapper'>
+         "<div class='movie-wrapper'>
          <div class='movie-form'>
              <label class='movie'>電影</label>
-             <form method='post' action='./insert_movie.php' class='movie-input-form'>
-                 <!-- <div class='notice'>$errormsg</div> -->
+             <form method='post' action='' class='movie-input-form'>
+                 <div class='notice'>$errormsg</div>
                  <div class='movie-group'>
                      <label for='user' class='label'>電影名稱:</label>
                      <input id='movieName' type='text' class='input' name = 'movieName'>
@@ -108,18 +109,16 @@
                      <label for='user' class='label'>圖片:</label>
                      <input id='photo' type='text' class='input' name = 'photo'>
                  </div>
- 
-                 <div class = 'insert-info'>
-                     <a href='./index.php' class='delete-info-btn'>取消</a>
-                     <input type='submit' class='insert-info-btn' value='下一步' name='insertBtn'>
-                 </div>
- 
+                 <a href='./index.php' class='delete-info-btn'>取消</a>
+         <input type='submit' class='insert-info-btn' value='下一步' name='insertBtn'>
                  <div class='hr'></div>
              </form>
          </div>
-     </div>";
+     </div>
+     <form class = 'insert-info' method='post' action='./insert_movie.php'>
+         
+     </form>";
     ?> 
     
-
 </body>
 </html>

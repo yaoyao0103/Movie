@@ -1,3 +1,4 @@
+
 function setValue(str){
     let element = document.getElementById("search-btn");
     element.value = str;
@@ -6,8 +7,8 @@ function setValue(str){
 }
 
 function toggle(movie, cast, director){
-    console.log(cast);
-    console.log(director);
+    console.log(movie.movie_id);
+    //location.href="setMovieIdSession.php?movieId=" + movie.movie_id;
     let blur = document.getElementById('blur');
     blur.classList.toggle('active');
     let popup = document.getElementById('popup');
@@ -33,6 +34,7 @@ function toggle(movie, cast, director){
     document.getElementById('popup_directors').innerHTML = "<span>導演: </span>" + directorStr;
     
 }
+
 
 function unToggle(){
     let blur = document.getElementById('blur');

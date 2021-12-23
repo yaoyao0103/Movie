@@ -69,11 +69,11 @@
         <?php include_once('navbar_no_search.php'); ?>
     </div>
     <div class='movie-wrapper'>
-        <form method='post' action='./insert_actor.php' class='movie-input-form' id = 'actorForm'>
-                <div class = 'insert-info'>
+        <form method='post' action='./insert_actor_db.php' class='movie-input-form' id = 'actorForm'>
+            <div class = 'insert-info'>
                 <a href='./index.php' class='confirm-info-btn'>取消</a>
                 <a href="#" class="confirm-info-btn" onclick="newActor()">新增演員</a>
-                <a href="./insert_movie.php" class="confirm-info-btn">下一步</a>
+                <a href="#" class="confirm-info-btn" onclick="document.getElementById('actorForm').submit();">下一步</a>
             </div>
         </form>
     </div>

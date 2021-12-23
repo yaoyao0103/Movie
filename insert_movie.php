@@ -27,6 +27,7 @@
     </div>
     <?php
         if($_POST['insertMovieBtn']){
+            
             header("Location:insert_actor.php");
         }
     ?>

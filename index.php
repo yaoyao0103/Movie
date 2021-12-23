@@ -20,6 +20,7 @@
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
    <link rel="stylesheet" href="css/style.php">
    <script type="text/javascript" src="js/jsFunctions.js"></script>
+
    <title>index.php</title>
 </head>
 <body>
@@ -115,3 +116,4 @@
    <script src="js/tilt.js"></script>
 </body>
 </html>
+

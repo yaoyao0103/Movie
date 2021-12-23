@@ -51,7 +51,7 @@
                     <div class=\"movie_year\"> Year: {$movie_year}年</div> 
                     <div class=\"movie_time\"> Time: {$movie_time}分鐘</div> 
                     <div class=\"movie_genres\"> Genres: $movie_genres</div> 
-                </div>";
+                </div></div>";
 
                 $result .= $content;
             }

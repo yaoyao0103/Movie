@@ -23,7 +23,7 @@
 </head>
 <body>
     <div>
-         <?php include_once('navbar_no_search.php'); ?>
+        <?php include_once('navbar_no_search.php'); ?>
     </div>
     <div class='movie-wrapper'>
         <div class='movie-form'>

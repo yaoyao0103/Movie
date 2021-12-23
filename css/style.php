@@ -118,7 +118,7 @@ background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 
 	transition: 0.5s;
 }
 
-#popup .popup_img {
+#popup_img {
 	float: left;
 	width: 240px;
 }

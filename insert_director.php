@@ -3,6 +3,7 @@
    require('functions.php');
    session_start();
    $username = $_SESSION['username'];
+   $movieid = $_SESSION['movieid'];
    $isAdmin = $_SESSION['isAdmin'];
 ?>
 
@@ -25,28 +26,84 @@
     <div>
          <?php include_once('navbar_no_search.php'); ?>
     </div>
+    <?php
+        if($_POST['insertBtn']){
+            // $moviename= $_POST['movieName'];
+            // $moviedate =$_POST['year'];
+            // $movietime =$_POST['duration'];
+            // $moviegenres =$_POST['genre'];
+            // $movieurl =$_POST['photo'];
+
+            // $actorFname =$_POST['actorFname'];
+            // $actorLname =$_POST['actorLname'];
+            // $role =$_POST['role'];
+
+            $directorFname =$_POST['directorFname'];
+            $directorLname =$_POST['directorLname'];
+            if($directorFname){
+                if($directorLname){
+                    $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
+                    $query = mysqli_query($conn, "SELECT * FROM directors WHERE director_first_name='$directorFname' and director_lirst_name='$directorLname' "); // query for matching directorname
+                    $numrows = mysqli_num_rows($query); // number of result
+                    if(numrows==0){
+                        $numofid=0;
+                        $directorid=0;
+                        while($numofid==0){
+                            $directorid=mt_rand(0,1000);
+                            $query = mysqli_query($conn, "SELECT * FROM directors WHERE director_id=$directorid"); // query for matching directorid
+                            $numrows = mysqli_num_rows($query);
+                            if($numrows == 0)//判斷id是否存在
+                                $numofid=1;
+                        }
+                        mysqli_query($conn, "INSERT INTO directors VALUES($directorid,'$directorFname', '$directorLname')");// query for creating director
+                        $query = mysqli_query($conn,"SELECT * FROM directors WHERE director_id=$directorid");
+                        $numrows = mysqli_num_rows($query); // number of result'
+                        if($numrows == 1){ // have one result
+                            $errormsg = "Create director success";
+                        }else
+                            $errormsg = "An error has occurred. Your director was not created";
+                            
+                    }
+                    mysqli_query($conn, "INSERT INTO movies_directors VALUES($directorid,'$movieid')");// query for creating director
+                    $query = mysqli_query($conn,"SELECT * FROM movies_directors WHERE director_id=$directorid and movie_id=$movieid");
+                    $numrows = mysqli_num_rows($query); // number of result'
+                    if($numrows == 1){ // have one result
+                        $errormsg = "Create movie director success";
+                    }else
+                        $errormsg = "An error has occurred. Your movie direcotr was not created";          
+                }else
+                     $errormsg ="You must enter director Lastname .";
+            }else
+                $errormsg ="You must enter director Firstname .";
+         }
+    echo"
     <div class='movie-wrapper'>
         <div class='movie-form'>
             <label class='movie'>導演</label>
             <form method='post' action='./insert_director.php' class='movie-input-form'>
-                <!-- <div class='notice'>$errormsg</div>  -->
+                <div class='notice'>$errormsg</div>
                 <div class='movie-group'>
                     <label for='user' class='label'>First Name:</label>
-                    <input id='user' type='text' class='input' name = 'username'>
+                    <input id='user' type='text' class='input' name = 'directorFname'>
                 </div>
                 <div class='movie-group'>
                     <label for='user' class='label'>Last Name:</label>
-                    <input id='user' type='text' class='input' name = 'username'>
+                    <input id='user' type='text' class='input' name = 'directorLname'>
                 </div>
                 
                 <div class = 'insert-info'>
                     <a href='./index.php' class='delete-info-btn'>取消</a>
-                    <input type='submit' class='insert-info-btn' value='下一步' name='insertDirectorBtn'>
+                    <input type='submit' class='insert-info-btn' value='下一步' name='insertBtn'>
                 </div>
 
                 <div class='hr'></div>
             </form>
         </div>
-    </div>
+    </div>";
+    
+    
+    ?>
+    
+    
 </body>
 </html>

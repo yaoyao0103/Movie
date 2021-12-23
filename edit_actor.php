@@ -25,6 +25,13 @@
     <div>
          <?php include_once('navbar_no_search.php'); ?>
     </div>
+    <?php
+    
+    
+    
+    
+    ?>
+
     <div class="actor-wrapper">
         <div class="actor-form">
             <label class="movie">演員</label>

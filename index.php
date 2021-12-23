@@ -20,6 +20,7 @@
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
    <link rel="stylesheet" href="css/style.php">
    <script type="text/javascript" src="js/jsFunctions.js"></script>
+   <script type="text/javascript" src="js/myphp"></script>
 
    <title>index.php</title>
 </head>
@@ -71,7 +72,7 @@
             <div id = 'popup_casts'></div>
             <?php 
                if($isAdmin) echo "
-               <div id = 'popup_delete_btn' class = 'popup_btn'><a href='./delete_movie.php' onclick = ''>Delete</a></div>
+               <div id = 'popup_delete_btn' class = 'popup_btn'><a href='./delete_all_movie_info.php' onclick = ''>Delete</a></div>
                <div id = 'popup_edit_btn' class = 'popup_btn'><a href='./edit_movie.php' onclick = ''>Edit</a></div>"
             ?>
             <div id = 'popup_close_btn' class = 'popup_btn'><a href='#' onclick = 'unToggle()'>Close</a></div>

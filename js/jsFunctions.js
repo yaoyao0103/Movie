@@ -8,7 +8,7 @@ function setValue(str){
 
 function toggle(movie, cast, director){
     console.log(movie.movie_id);
-    //location.href="setMovieIdSession.php?movieId=" + movie.movie_id;
+    // location.href="setMovieIdSession.php?movieId=" + movie.movie_id;
     let blur = document.getElementById('blur');
     blur.classList.toggle('active');
     let popup = document.getElementById('popup');
@@ -42,9 +42,3 @@ function unToggle(){
     let popup = document.getElementById('popup');
     popup.classList.toggle('active');
 }
-
-// function delete_all_movie_info() {
-//     $(document).ready(function() {
-//         const movie_title = $("#popup_title").val();
-//     })
-// }

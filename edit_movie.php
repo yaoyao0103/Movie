@@ -28,7 +28,7 @@
          <?php include_once('navbar_no_search.php'); ?>
     </div>
     <?php
-        $conn = mysqli_connect("localhost", "plusxk2", "a147896325", "movie_db"); // connect to DB
+        $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
         if($_POST['editMovieBtn']){
             $moviename= $_POST['movieName'];
             $moviedate =$_POST['year'];

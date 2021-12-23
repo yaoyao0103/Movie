@@ -176,6 +176,18 @@ background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 
 	color: white;
 }
 
+#popup_delete_btn a {
+	position: absolute;
+	bottom: 20px;
+	right: 180px;
+	text-decoration: none;
+	color: black;
+	background-color: white;
+	border-radius: 5px;
+	width: 60px;
+	text-align: center;
+}
+
 #popup_edit_btn a{
 	position: absolute;
 	bottom: 20px;

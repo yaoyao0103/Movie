@@ -40,3 +40,9 @@ function unToggle(){
     let popup = document.getElementById('popup');
     popup.classList.toggle('active');
 }
+
+// function delete_all_movie_info() {
+//     $(document).ready(function() {
+//         const movie_title = $("#popup_title").val();
+//     })
+// }

@@ -32,17 +32,17 @@
                 $directorsJSON = json_encode($tempDirector);
                 
                 $movieJSON = json_encode($movie);
-                $ratingSql = "SELECT count(*) FROM ratings WHERE movie_id = '$movie_id'";
+                $ratingSql = "SELECT avg(Cast(stars as Float)) FROM ratings WHERE movie_id = '$movie_id'";
                 $ratingResult = mysqli_query($conn, $ratingSql); // get result
                 $ratingResult = $ratingResult->fetch_array();
-                $movie_rating_num = intval($ratingResult[0]);
+                $movie_rating = floatval($ratingResult[0]);
                 $content = "<div class=\"card\" data-tilt data-tilt-max=\"10\" style=\"background-image: url($photoURL)\" onclick='toggle($movieJSON, $castsJSON, $directorsJSON)'> 
                     <div class=\"card_content\"> 
                         <div class=\"movie_title\"> $movie_title</div> 
                         <div class=\"movie_year\"> Year: {$movie_year}年</div> 
                         <div class=\"movie_time\"> Time: {$movie_time}分鐘</div> 
                         <div class=\"movie_genres\"> Genres: $movie_genres</div> 
-                        <div class=\"movie_ratings\"> Rating Times: $movie_rating_num</div> 
+                        <div class=\"movie_ratings\"> Rating: $movie_rating</div> 
                     </div>
                 </div>";
 

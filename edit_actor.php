@@ -30,7 +30,7 @@
         <?php include_once('navbar_no_search.php'); ?>
     </div>
      <?php
-        $conn = mysqli_connect("localhost", "plusxk2", "a147896325", "movie_db"); // connect to DB
+        $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
         ////////儲存/////////
         if($_POST['editActorBtn']){
             $lastNamet =$_POST['lastName2'];

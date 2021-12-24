@@ -43,7 +43,7 @@
                 //make sure info provided
                 if($username){ 
                     if($password){
-                        $conn = mysqli_connect("localhost", "plusxk2", "a147896325", "movie_db"); // connect to DB
+                        $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
                         $query = mysqli_query($conn, "SELECT * FROM users WHERE username='$username'"); // query for matching username
                         $numrows = mysqli_num_rows($query); // number of result
                         if($numrows == 1){ // have one matching data

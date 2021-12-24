@@ -23,47 +23,7 @@
     <link rel="stylesheet" href="css/insert_movie_style.php">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/jsFunctions.js"></script>
-
     <title>Insert Movie</title>
-    <script>
-
-        var num = 0;
-        function start(){
-            newActor();
-        }
-
-        function newActor(){
-            
-            num++;
-            var actorFname="<?php echo $actorFname;?>";
-            var actorLname="<?php echo $actorLname;?>";
-            var actorFname="<?php echo $actor_role;?>";
-            var role="<?php echo $actorFname;?>";
-            let content = "<label class='movie'>演員</label>\
-                    <div class='movie-group'>\
-                        <label for='user' class='label'>First Name:</label>\
-                        <input id='user' type='text' class='input' name = 'firstName" + num + "value="+actorFname+"'>\
-                    </div>\
-                    <div class='movie-group'>\
-                        <label for='user' class='label'>Last Name:</label>\
-                        <input id='user' type='text' class='input' name = 'lastName" + num + "value="+actorLname+"'>\
-                    </div>\
-                    <div class='movie-group'>\
-                        <label for='user' class='label'>角色:</label>\
-                        <input id='user' type='text' class='input' name = 'role" + num + "value="+role+"'>\
-                    </div>\
-                    <div class = 'delete-info'>\
-                    <a href='#' class='delete-info-btn' onclick = 'deleteActor(this)'>刪除</a>\
-                    </div>\
-                <div class='hr'></div>\
-            </div>";
-            let child = document.createElement("div");
-            child.innerHTML = content;
-            child.setAttribute("class", "movie-form");
-            actorForm.appendChild(child);
-        }
-        //window.addEventListener("load", start, false);
-    </script>
 </head>
 <body>
     <div>
@@ -73,6 +33,7 @@
         $conn = mysqli_connect("localhost", "plusxk2", "a147896325", "movie_db"); // connect to DB
         ////////儲存/////////
         if($_POST['editActorBtn']){
+            $lastNamet =$_POST['lastName2'];
             for($i = 1; $i <= 30; $i++){
                 $lastName =$_POST['lastName' . strval($i)];
                 $firstName =$_POST['firstName' . strval($i)];
@@ -91,7 +52,7 @@
                                 }else
                                     $errormsg='Save success';
                             }
-                            if($actormum==0){//新增的actor
+                            if($actornum==0){//新增的actor
                                 $numOfId=0;
                                 while($numOfId == 0){
                                     $randactorid = mt_rand(0,1000);
@@ -146,10 +107,6 @@
             }
 
         }
-        
-
-        
-
 
         ////////HTML最外圈的code/////////
         echo
@@ -167,10 +124,11 @@
 
          $conn = mysqli_connect("localhost", "plusxk2", "a147896325", "movie_db"); // connect to DB
          $cast_result=mysqli_query($conn, "SELECT * FROM movies_cast WHERE movie_id=$movieid");
-         $numrows = mysqli_num_rows($cast_result); // number of result
-        if($numrows >=1){
+         $castnum = mysqli_num_rows($cast_result); // number of result
+         //setcookie(,$castnum);
+        if($castnum >=1){
             ////////有幾個actor建幾個/////////
-            for($i = 1; $i <= $numrows; $i++){
+            for($i = 1; $i <= $castnum; $i++){
                 
                     $cast = mysqli_fetch_array($cast_result, MYSQLI_ASSOC);
                     //$actor_id=array(),$actor_role=array(),$actor_role=array(),$actorFname=array(),$actorLname=array();
@@ -218,5 +176,45 @@
         }
 
     ?>
+    <script>
+        var num =0;
+        function start(){
+            <?php echo "var jsvar ='$castnum';"?>
+            num=jsvar;     
+        }
+
+        function newActor(){
+            num++;
+            let content = "<label class='movie'>演員</label>\
+                    <div class='movie-group'>\
+                        <label for='user' class='label'>First Name:</label>\
+                        <input id='user' type='text' class='input' name = 'firstName" + num + "'>\
+                    </div>\
+                    <div class='movie-group'>\
+                        <label for='user' class='label'>Last Name:</label>\
+                        <input id='user' type='text' class='input' name = 'lastName" + num + "'>\
+                    </div>\
+                    <div class='movie-group'>\
+                        <label for='user' class='label'>角色:</label>\
+                        <input id='user' type='text' class='input' name = 'role" + num + "'>\
+                    </div>\
+                    <div class = 'delete-info'>\
+                    <a href='#' class='delete-info-btn' onclick = 'deleteActor(this)'>刪除</a>\
+                    </div>\
+                <div class='hr'></div>\
+            </div>";
+            let child = document.createElement("div");
+            child.innerHTML = content;
+            child.setAttribute("class", "movie-form");
+            actorForm.appendChild(child);
+        }
+        function deleteActor(element){
+            let temp = element.parentElement.parentElement;
+            let tempParent = temp.parentElement;
+            tempParent.removeChild(temp);
+
+        }
+        window.addEventListener("load", start, false);
+    </script>
 </body>
 </html>

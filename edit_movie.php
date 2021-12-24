@@ -28,6 +28,7 @@
          <?php include_once('navbar_no_search.php'); ?>
     </div>
     <?php
+        $errormsg = $movieid;
         $conn = mysqli_connect("localhost", "plusxk2", "a147896325", "movie_db"); // connect to DB
         if($_POST['editMovieBtn']){
             $moviename= $_POST['movieName'];

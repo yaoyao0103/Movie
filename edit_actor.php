@@ -122,7 +122,7 @@
                 <div class='notice'>$errormsg</div>";
         
 
-         $conn = mysqli_connect("localhost", "plusxk2", "a147896325", "movie_db"); // connect to DB
+         $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
          $cast_result=mysqli_query($conn, "SELECT * FROM movies_cast WHERE movie_id=$movieid");
          $castnum = mysqli_num_rows($cast_result); // number of result
          //setcookie(,$castnum);

@@ -8,7 +8,9 @@
     padding-left: 140px;
     max-width: 1400px;
     text-align: center;
-    display:inline-flex;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .actor-wrapper {
@@ -33,6 +35,10 @@
     align-items: center;
 }
 
+.actor-label {
+    text-align: center;
+}
+
 .movie-form {
     padding: 25px;
     border: solid #FFFFAB;
@@ -41,9 +47,6 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin-left: 30px;
     margin-bottom: 30px;
-    width: 350px;
-    height: 350px;
-    float: left;
 }
 
 .movie {
@@ -73,8 +76,7 @@
 .insert-info {
     position: relative;
     display: flex;
-    padding: 30px;
-    width: 1200px;
+    padding: 5px;
     justify-content: center;
 }
 

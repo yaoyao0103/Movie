@@ -30,7 +30,7 @@
 
         function newActor(){
             num++;
-            let content = "<label class='movie'>演員</label>\
+            let content = "<div class='actor-label'><label class='movie'>演員</label></div>\
                     <div class='movie-group'>\
                         <label for='user' class='label'>First Name:</label>\
                         <input id='user' type='text' class='input' name = 'firstName" + num + "'>\

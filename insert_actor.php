@@ -50,7 +50,7 @@
             </div>";
             let child = document.createElement("div");
             child.innerHTML = content;
-            child.setAttribute("class", "movie-form");
+            child.setAttribute("class", "actor-form");
             actorForm.appendChild(child);
         }
 
@@ -68,7 +68,7 @@
     <div>
         <?php include_once('navbar_no_search.php'); ?>
     </div>
-    <div class='movie-wrapper'>
+    <div class='actor-wrapper'>
         <form method='post' action='./insert_actor_db.php' class='movie-input-form' id = 'actorForm'>
             <div class = 'insert-info'>
                 <a href='./index.php' class='confirm-info-btn'>取消</a>

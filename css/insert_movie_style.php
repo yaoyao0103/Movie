@@ -154,7 +154,7 @@
     margin: 10px;
     background-color: #FFFFDE;
     color: black;
-    width: 10%;
+    width: 50%;
     text-align: center;
     border-radius: 5px;
     font-weight: bold;

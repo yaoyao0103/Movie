@@ -42,7 +42,6 @@
                             if($numrows == 0)//判斷id是否存在
                                 $numofid=1;
                         }
-                        echo $movieId . "-" . $directorid . "-" . $first_name . "-" . $last_name;
                         $sql = "INSERT INTO directors VALUES($directorid, '$first_name', '$last_name')";
                         mysqli_query($conn, $sql);
                         $insert_result = mysqli_query($conn, "SELECT * FROM directors WHERE director_id=$directorid");
@@ -65,12 +64,6 @@
                             $errormsg .= "-error";
                         }
                     }
-                    else{   // update
-                        $sql = "UPDATE directors SET director_first_name = '$first_name'  , director_last_name = '$last_name' WHERE director_id = $director_id";
-                        mysqli_query($conn, $sql);
-                        $errormsg = "success";
-                    }
-
                 }
                 else{
                     $errormsg = "Please enter the last name of director!";
@@ -89,10 +82,10 @@
             $query = mysqli_query($conn, $sql);
             $numrows = mysqli_num_rows($query); // number of result
             if($numrows == 0){
-                echo "success";
+                $errormsg = "success";
             }
             else{
-                echo "error";
+                $errormsg = "error";
             }
             $_SESSION['director_id'] = "";  
         }
@@ -125,29 +118,17 @@
                 $first_name = $director_info['director_first_name'];
                 $last_name = $director_info['director_last_name'];
                 $_SESSION['director_id'] = $director_id;
-            }
-            else{
-                $director_id = "";
-                $first_name = "";
-                $last_name = "";
-            }
-        }
-        else{
-            $director_id = "";
-            $first_name = "";
-            $last_name = "";
-        }
-        $content .= "<div class = 'movie-form'>
+                $content .= "<div class = 'movie-form'>
                     <label class='movie'>導演</label>
                     <div class='notice'>$errormsg</div>
                     <input id='director_id' type='text' class='input' name = 'director_id' value = '$director_id' hidden>
                     <div class='movie-group'>
                         <label for='user' class='label'>First Name:</label>
-                        <input id='first_name' type='text' class='input' name = 'first_name' value = '$first_name'>
+                        <input id='first_name' type='text' class='input' name = 'first_name' value = '$first_name' readonly='readonly'>
                     </div>
                     <div class='movie-group'>
                         <label for='user' class='label'>Last Name:</label>
-                        <input id='last_name' type='text' class='input' name = 'last_name' value = '$last_name'>
+                        <input id='last_name' type='text' class='input' name = 'last_name' value = '$last_name' readonly='readonly'>
                     </div>
                         <div class = 'delete-info'>
                         <input class='delete-info-btn' type='submit' name = 'deleteDirectorBtn' value = '刪除'>
@@ -155,6 +136,49 @@
                 <div class='hr'></div>
             </div>
         </form>";
+            }
+            else{
+                $content .= "<div class = 'movie-form'>
+                    <label class='movie'>導演</label>
+                    <div class='notice'>$errormsg</div>
+                    <input id='director_id' type='text' class='input' name = 'director_id' value = '$director_id' hidden>
+                    <div class='movie-group'>
+                        <label for='user' class='label'>First Name:</label>
+                        <input id='first_name' type='text' class='input' name = 'first_name'>
+                    </div>
+                    <div class='movie-group'>
+                        <label for='user' class='label'>Last Name:</label>
+                        <input id='last_name' type='text' class='input' name = 'last_name'>
+                    </div>
+                        <div class = 'delete-info'>
+                        <input class='delete-info-btn' type='submit' name = 'deleteDirectorBtn' value = '刪除'>
+                    </div>
+                <div class='hr'></div>
+            </div>
+        </form>";
+            }
+        }
+        else{
+            $content .= "<div class = 'movie-form'>
+                    <label class='movie'>導演</label>
+                    <div class='notice'>$errormsg</div>
+                    <input id='director_id' type='text' class='input' name = 'director_id' value = '$director_id' hidden>
+                    <div class='movie-group'>
+                        <label for='user' class='label'>First Name:</label>
+                        <input id='first_name' type='text' class='input' name = 'first_name'>
+                    </div>
+                    <div class='movie-group'>
+                        <label for='user' class='label'>Last Name:</label>
+                        <input id='last_name' type='text' class='input' name = 'last_name'>
+                    </div>
+                        <div class = 'delete-info'>
+                        <input class='delete-info-btn' type='submit' name = 'deleteDirectorBtn' value = '刪除'>
+                    </div>
+                <div class='hr'></div>
+            </div>
+        </form>";
+        }
+        
 
         echo $content;
     ?>

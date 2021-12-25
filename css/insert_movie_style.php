@@ -4,7 +4,7 @@
 
 .movie-wrapper {
     position: relative;
-    padding: 10px 40px;
+    padding: 40px;
     padding-left: 140px;
     max-width: 1400px;
     text-align: center;
@@ -15,24 +15,11 @@
 
 .actor-wrapper {
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    grid-auto-flow: dense;
-    padding: 60px 40px;
+    padding: 10px 40px;
+    padding-left: 140px;
+    max-width: 1400px;
     text-align: center;
-}
-
-.actor-form {
-    border: solid #FFFFAB;
-    border-width: 1px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display:inline-flex;
 }
 
 .actor-label {
@@ -49,6 +36,17 @@
     margin-bottom: 30px;
 }
 
+.actor-form {
+    padding: 25px;
+    border: solid #FFFFAB;
+    border-width: 1px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    float: left;
+}
+
 .movie {
     font-weight: bold;
     font-size: 40px;
@@ -60,6 +58,12 @@
 
 .movie-group {
     margin-bottom: 20px;
+}
+
+.notice {
+    text-align: center;
+    color: #FFABAB;
+    margin-bottom: 10px;
 }
 
 .label {
@@ -77,6 +81,14 @@
     position: relative;
     display: flex;
     padding: 5px;
+    justify-content: center;
+}
+
+.actor-insert-info {
+    position: relative;
+    display: flex;
+    padding: 30px;
+    width: 1200px;
     justify-content: center;
 }
 
@@ -168,26 +180,5 @@
 .confirm-info-btn:hover {
     background-color: rgb(35,35,35);
     color: #FFFFAB;
-    text-decoration: none;
-}
-
-.cancel-info-btn {
-    margin: 10px;
-    background-color: #FFDEDE;
-    color: black;
-    width: 10%;
-    text-align: center;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 20px;
-    border: solid #FFABAB;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 5px;
-    transition: all .35s;
-}
-
-.cancel-info-btn:hover {
-    background-color: rgb(35,35,35);
-    color: #FFABAB;
     text-decoration: none;
 }

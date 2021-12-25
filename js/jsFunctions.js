@@ -1,4 +1,6 @@
 
+
+
 function setValue(str){
     let element = document.getElementById("search-btn");
     element.value = str;
@@ -7,8 +9,20 @@ function setValue(str){
 }
 
 function toggle(movie, cast, director){
-    console.log(movie.movie_id);
-    // location.href="setMovieIdSession.php?movieId=" + movie.movie_id;
+    //console.log(movie.movie_id);
+    $.ajax({
+        type: "POST",
+        url: "setMovieIdSession.php",
+        data:{
+            movieId: movie.movie_id
+        },
+        success: function(data){
+            //console.log(data);
+        },
+        error: function (error) {
+            console.log('error; ' + eval(error));
+        }}
+        );
     let blur = document.getElementById('blur');
     blur.classList.toggle('active');
     let popup = document.getElementById('popup');

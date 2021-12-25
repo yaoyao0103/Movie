@@ -64,31 +64,6 @@ background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 
 }
 
 
-.page_btn_div {
-	width: 800px;
-	margin:0 auto
-}
-
-.page_btn{
-	background: black;
-	color:white;
-	width: 35px;
-	border: 0.1px solid #4F4F4F;
-	margin-left: 0.8px;
-	border-radius: 5px;
-}
-
-.present_page{
-	background: white;
-	color:#743A3A;
-}
-
-.page_btn:hover{
-	background: white;
-	color: #743A3A;
-	transition: 0.15s;
-}
-
 
 #blur.active {
 	filter: blur(20px);
@@ -174,6 +149,10 @@ background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 
 	margin-right: 10px;
 	font-size: 15px;
 	color: white;
+}
+
+#popup_stars {
+	margin-left: 30px;
 }
 
 #popup_delete_btn a{
@@ -271,17 +250,18 @@ label.star:before {
 }
 
 .insert-movie {
-	display: flex;
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
 	justify-content: right;
-	padding-right: 50px;
 	font-size: 60px;
 }
 
 .insert-movie-btn {
+
 	padding: 15px 15px;
-	line-height: 40px;
+	border-radius: 10%;
 	background-color: white;
-	border-radius: 50%;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 	color: black;
 	transition: all .35s;

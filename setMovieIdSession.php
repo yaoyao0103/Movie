@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $movieId = $_GET['movieId'];
+    $movieId = $_POST['movieId'];
     $_SESSION['movieId'] = $movieId;
 
 ?>

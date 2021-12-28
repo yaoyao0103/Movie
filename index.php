@@ -162,7 +162,7 @@
             </div>
             <?php 
                if($isAdmin) echo "
-               <div id = 'popup_delete_btn' class = 'popup_btn'><a href='./delete_movie.php' onclick = ''>Delete</a></div>
+               <div id = 'popup_delete_btn' class = 'popup_btn'><a href='./delete_all_movie_info.php' onclick = ''>Delete</a></div>
                <div id = 'popup_edit_btn' class = 'popup_btn'><a href='./edit_movie.php' onclick = ''>Edit</a></div>"
                ?>
             <div id = 'popup_close_btn' class = 'popup_btn'><a href='#' onclick = 'unToggle()'>Close</a></div>

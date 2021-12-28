@@ -116,10 +116,10 @@
                $sql = "SELECT * FROM movies WHERE movie_title like '%$keyword%'";
             }
             else if($category == "Director"){
-               $sql = "SELECT M.* FROM movies as M, movies_directors as MD, directors as D WHERE M.movie_id = MD.movie_id and MD.director_id = D.director_id and (D.director_first_name like '%$keyword%' or D.director_last_name like '%$keyword%')";
+               $sql = "SELECT M.* FROM (movies as M natural join movies_directors as MD) join directors as D using(director_id) WHERE D.director_first_name like '%$keyword%' or D.director_last_name like '%$keyword%'";
             }
             else if($category == "Cast"){
-               $sql = "SELECT M.* FROM movies as M, movies_cast as MC, actors as A WHERE M.movie_id = MC.movie_id and MC.actor_id = A.actor_id and (A.actor_first_name like '%$keyword%' or A.actor_last_name like '%$keyword%')";
+               $sql = "SELECT M.* FROM (movies as M natural join movies_cast as MC) join actors as A using(actor_id) WHERE M.movie_id = MC.movie_id and MC.actor_id = A.actor_id and (A.actor_first_name like '%$keyword%' or A.actor_last_name like '%$keyword%')";
             }
             else if($category == "Year"){
                $year = intval($keyword);

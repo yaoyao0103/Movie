@@ -1,5 +1,5 @@
 <?php
-   //error_reporting(0);
+   error_reporting(0);
    require('functions.php');
    session_start();
    $username = $_SESSION['username'];
@@ -64,8 +64,8 @@
                             $errormsg = "An error has occurred. Your director was not created";
                             
                     }
-                    mysqli_query($conn, "INSERT INTO movies_directors VALUES($directorid,'$movieid')");// query for creating director
-                    $query = mysqli_query($conn,"SELECT * FROM movies_directors WHERE director_id=$directorid and movie_id=$movieid");
+                    mysqli_query($conn, "INSERT INTO movie_directors VALUES($directorid,'$movieid')");// query for creating director
+                    $query = mysqli_query($conn,"SELECT * FROM movie_directors WHERE director_id=$directorid and movie_id=$movieid");
                     $numrows = mysqli_num_rows($query); // number of result'
                     if($numrows == 1){ // have one result
                         header('Location:index.php');
@@ -78,27 +78,29 @@
          }
     echo"
     <div class='movie-wrapper'>
-        <div class='movie-form'>
-            <label class='movie'>導演</label>
+            
+            
             <form method='post' action='./insert_director.php' class='movie-input-form'>
-                <div class='notice'>$errormsg</div>
-                <div class='movie-group'>
-                    <label for='user' class='label'>First Name:</label>
-                    <input id='user' type='text' class='input' name = 'directorFname'>
-                </div>
-                <div class='movie-group'>
-                    <label for='user' class='label'>Last Name:</label>
-                    <input id='user' type='text' class='input' name = 'directorLname'>
-                </div>
-                
                 <div class = 'insert-info'>
-                    <a href='./index.php' class='delete-info-btn'>取消</a>
-                    <input type='submit' class='insert-info-btn' value='下一步' name='insertBtn'>
+                    <a href='./index.php' class='confirm-info-btn'>取消</a>
+                    <input class='confirm-info-btn' type='submit' name = 'insertBtn' value = '儲存'>
                 </div>
-                <div class='hr'></div>
+                <div class = 'movie-form'>
+                    <label class='movie'>導演</label>
+                    <div class='notice'>$errormsg</div>
+                    <div class='movie-group'>
+                        <label for='user' class='label'>First Name:</label>
+                        <input id='user' type='text' class='input' name = 'directorFname'>
+                    </div>
+                    <div class='movie-group'>
+                        <label for='user' class='label'>Last Name:</label>
+                        <input id='user' type='text' class='input' name = 'directorLname'>
+                    </div>
+                    <div class='hr'></div>
+                </div>
             </form>
-        </div>
     </div>";
+    
     
     
     ?>

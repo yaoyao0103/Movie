@@ -29,7 +29,7 @@
             $last_name = $_POST['last_name'];
             if($first_name){
                 if($last_name){
-                    $sql = "SELECT * FROM movies_directors WHERE movie_id = $movieId";
+                    $sql = "SELECT * FROM movie_directors WHERE movie_id = $movieId";
                     $director_result = mysqli_query($conn, $sql);
                     $numrows = mysqli_num_rows($director_result); // number of result
                     if($numrows == 0){  // insert
@@ -53,9 +53,9 @@
                         else{
                             $errormsg = "error";
                         }
-                        $sql = "INSERT INTO movies_directors VALUES($directorid, $movieId)";
+                        $sql = "INSERT INTO movie_directors VALUES($directorid, $movieId)";
                         mysqli_query($conn, $sql);
-                        $insert_result = mysqli_query($conn, "SELECT * FROM movies_directors WHERE director_id=$directorid");
+                        $insert_result = mysqli_query($conn, "SELECT * FROM movie_directors WHERE director_id=$directorid");
                         $numrows = mysqli_num_rows($insert_result); // number of result
                         if($numrows == 1){
                             $errormsg .= "-success";
@@ -95,10 +95,11 @@
     </div>
     <?php
 
-        $sql = "SELECT * FROM movies_directors WHERE movie_id = $movieId";
+        $sql = "SELECT * FROM movie_directors WHERE movie_id = $movieId";
         $director_result = mysqli_query($conn, $sql);
         $numrows = mysqli_num_rows($director_result); // number of result
-        $content = "<form method='post' action='./edit_director.php' class='movie-input-form' id = 'directorForm'>
+        $content = "<div class='movie-wrapper'>
+        <form method='post' action='./edit_director.php' class='movie-input-form' id = 'directorForm'>
                 
                 <div class = 'insert-info'>
                     <a href='./index.php' class='confirm-info-btn'>取消</a>
@@ -135,7 +136,7 @@
                     </div>
                 <div class='hr'></div>
             </div>
-        </form>";
+        </form></div>";
             }
             else{
                 $content .= "<div class = 'movie-form'>
@@ -155,7 +156,7 @@
                     </div>
                 <div class='hr'></div>
             </div>
-        </form>";
+        </form></div>";
             }
         }
         else{
@@ -176,7 +177,7 @@
                     </div>
                 <div class='hr'></div>
             </div>
-        </form>";
+        </form></div>";
         }
         
 

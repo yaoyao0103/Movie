@@ -46,7 +46,7 @@
                             if($actornum>=1){//原本就有的actor
                                 $actor = mysqli_fetch_array($actor_result, MYSQLI_ASSOC);
                                 $actorid=$actor['actor_id'];
-                                $query = mysqli_query($conn, "UPDATE movies_cast SET role='$role' WHERE movie_id=$movieid and actor_id=$actorid"); // query for update cast
+                                $query = mysqli_query($conn, "UPDATE movie_casts SET role='$role' WHERE movie_id=$movieid and actor_id=$actorid"); // query for update cast
                                 if(!$query){ 
                                     $errormsg='Can not save';
                                 }else
@@ -66,8 +66,8 @@
                                 $query = mysqli_query($conn,"SELECT * FROM actors WHERE actor_id = $randactorid");
                                 $numrows = mysqli_num_rows($query); // number of result'
                                 if($numrows == 1){ // have one result
-                                    mysqli_query($conn, "INSERT INTO movies_cast VALUES($movieid, $randactorid, '$role')");// query for creating actor
-                                    $query = mysqli_query($conn,"SELECT * FROM movies_cast WHERE movie_id = $movieid and actor_id = $randactorid");
+                                    mysqli_query($conn, "INSERT INTO movie_casts VALUES($movieid, $randactorid, '$role')");// query for creating actor
+                                    $query = mysqli_query($conn,"SELECT * FROM movie_casts WHERE movie_id = $movieid and actor_id = $randactorid");
                                     $numrows = mysqli_num_rows($query); // number of result'
                                     if($numrows == 1){ // have one result
                                         $createrrormsg= "Create actor " . $firstName . $lastName . " success";
@@ -96,7 +96,7 @@
                 if($actornum>=1){
                     $actor = mysqli_fetch_array($actor_result, MYSQLI_ASSOC);
                     $actorid=$actor['actor_id'];
-                    $query=mysqli_query($conn,"DELETE FROM movies_cast WHERE movie_id=$movieid and actor_id=$actorid");
+                    $query=mysqli_query($conn,"DELETE FROM movie_casts WHERE movie_id=$movieid and actor_id=$actorid");
                     if(!$query){ 
                         $deleteErrormsg='Can not delete actor' . $firstName . $lastName;
                     }else
@@ -123,7 +123,7 @@
         
 
          $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
-         $cast_result=mysqli_query($conn, "SELECT * FROM movies_cast WHERE movie_id=$movieid");
+         $cast_result=mysqli_query($conn, "SELECT * FROM movie_casts WHERE movie_id=$movieid");
          $castnum = mysqli_num_rows($cast_result); // number of result
          //setcookie(,$castnum);
         if($castnum >=1){

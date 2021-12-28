@@ -50,7 +50,7 @@
                         if($moviegenres){
                             if($movieurl){
                                 $query = mysqli_query($conn, "UPDATE movies SET movie_title='$moviename',movie_year=$moviedate,
-                                                        movie_time=$movietime,movie_genres='$moviegenres',photoURL='$movieURL' WHERE movie_id=$movieid"); // query for update movie
+                                                        movie_time=$movietime,movie_genres='$moviegenres',photoURL='$movieurl' WHERE movie_id=$movieid"); // query for update movie
                                 if(!$query){ // have no result: there is no exist the same moviename
                                     // query for insert movie info
                                     $errormsg='Can not save';
@@ -118,10 +118,6 @@
      </div>
      <form class = 'insert-info' method='post' action='./insert_movie.php'>
      </form>";
-    ?>
-    <?php
-       
-    
     ?>
 
     <!-- <div class="movie-wrapper">

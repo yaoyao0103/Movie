@@ -32,8 +32,8 @@
                             echo "An error has occurred. Your actor ". $firstName . $lastName . " was not created";
                             
                     }
-                    mysqli_query($conn, "INSERT INTO movies_cast VALUES($movieId, $actorId, '$role')");// query for creating director
-                    $query = mysqli_query($conn,"SELECT * FROM movies_cast WHERE movie_id = $movieId and actor_id = $actorId");
+                    mysqli_query($conn, "INSERT INTO movie_casts VALUES($movieId, $actorId, '$role')");// query for creating director
+                    $query = mysqli_query($conn,"SELECT * FROM movie_casts WHERE movie_id = $movieId and actor_id = $actorId");
                     $numrows = mysqli_num_rows($query); // number of result'
                     if($numrows == 1){ // have one result
                         header("Location: insert_director.php");

@@ -17,14 +17,14 @@
                 $movie_genres = $movie['movie_genres'];
                 $photoURL = $movie['photoURL'];
 
-                $castSql = "select A.* from movies_cast as MC, actors as A where movie_id = $movie_id and MC.actor_id = A.actor_id";
+                $castSql = "SELECT A.* from movie_casts as MC natural join actors as A where movie_id = $movie_id";
                 $casts = mysqli_query($conn, $castSql);
                 $tempCast = [];
                 while($row = mysqli_fetch_assoc($casts))
                     $tempCast[] = $row; 
                 $castsJSON = json_encode($tempCast);
                 //get tags
-                $directorSql = "select D.* from movies_directors as MD, directors as D where movie_id = $movie_id and MD.director_id = D.director_id";
+                $directorSql = "SELECT D.* from movie_directors as MD  natural join directors as D where movie_id = $movie_id";
                 $directors = mysqli_query($conn, $directorSql);
                 $tempDirector = [];
                 while($row = mysqli_fetch_assoc($directors))

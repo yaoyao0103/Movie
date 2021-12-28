@@ -4,6 +4,17 @@
 
 .movie-wrapper {
     position: relative;
+    padding: 40px;
+    padding-left: 140px;
+    max-width: 1400px;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.actor-wrapper {
+    position: relative;
     padding: 10px 40px;
     padding-left: 140px;
     max-width: 1400px;
@@ -11,26 +22,8 @@
     display:inline-flex;
 }
 
-.actor-wrapper {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    grid-auto-flow: dense;
-    padding: 60px 40px;
+.actor-label {
     text-align: center;
-}
-
-.actor-form {
-    border: solid #FFFFAB;
-    border-width: 1px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .movie-form {
@@ -41,8 +34,17 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin-left: 30px;
     margin-bottom: 30px;
-    width: 350px;
-    height: 350px;
+    float: left;
+}
+
+.actor-form {
+    padding: 25px;
+    border: solid #FFFFAB;
+    border-width: 1px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-left: 30px;
+    margin-bottom: 30px;
     float: left;
 }
 
@@ -52,11 +54,17 @@
 }
 
 .movie-input-form {
-    text-align: right;
+    text-align: center;
 }
 
 .movie-group {
     margin-bottom: 20px;
+}
+
+.notice {
+    text-align: center;
+    color: #FFABAB;
+    margin-bottom: 10px;
 }
 
 .label {
@@ -71,6 +79,14 @@
 }
 
 .insert-info {
+    position: relative;
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+    width: 1200px;
+}
+
+.actor-insert-info {
     position: relative;
     display: flex;
     padding: 30px;
@@ -131,7 +147,7 @@
     margin: 10px;
     background-color: #DEFFDE;
     color: black;
-    width: 50%;
+    width: 30%;
     text-align: center;
     border-radius: 5px;
     font-weight: bold;
@@ -152,7 +168,7 @@
     margin: 10px;
     background-color: #FFFFDE;
     color: black;
-    width: 10%;
+    width: 50%;
     text-align: center;
     border-radius: 5px;
     font-weight: bold;

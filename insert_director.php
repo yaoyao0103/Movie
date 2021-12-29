@@ -70,7 +70,7 @@
                     if($numrows == 1){ // have one result
                         header('Location:index.php');
                     }else
-                        $errormsg = "An error has occurred. Your movie direcotr was not created";          
+                        $errormsg = "An error has occurred. Your movie director was not created";          
                 }else
                      $errormsg ="You must enter director Lastname .";
             }else
@@ -78,27 +78,25 @@
          }
     echo"
     <div class='movie-wrapper'>
-            
-            
-            <form method='post' action='./insert_director.php' class='movie-input-form'>
-                <div class = 'insert-info'>
-                    <a href='./index.php' class='confirm-info-btn'>取消</a>
-                    <input class='confirm-info-btn' type='submit' name = 'insertBtn' value = '儲存'>
-                </div>
-                <div class = 'movie-form'>
+                <div class = 'movie-form director'>
                     <label class='movie'>導演</label>
-                    <div class='notice'>$errormsg</div>
-                    <div class='movie-group'>
-                        <label for='user' class='label'>First Name:</label>
-                        <input id='user' type='text' class='input' name = 'directorFname'>
-                    </div>
-                    <div class='movie-group'>
-                        <label for='user' class='label'>Last Name:</label>
-                        <input id='user' type='text' class='input' name = 'directorLname'>
-                    </div>
-                    <div class='hr'></div>
+                    <form method='post' action='./insert_director.php' class='movie-input-form'>
+                        <div class='notice'>$errormsg</div>
+                        <div class='movie-group'>
+                            <label for='user' class='label'>First Name:</label>
+                            <input id='user' type='text' class='input' name = 'directorFname'>
+                        </div>
+                        <div class='movie-group'>
+                            <label for='user' class='label'>Last Name:</label>
+                            <input id='user' type='text' class='input' name = 'directorLname'>
+                        </div>
+                        <div class = 'insert-info'>
+                            <a href='./index.php' class='delete-info-btn'>取消</a>
+                            <input class='confirm-info-btn' type='submit' name = 'insertBtn' value = '儲存'>
+                        </div>
+                        <div class='hr'></div>
+                    </form>
                 </div>
-            </form>
     </div>";
     
     

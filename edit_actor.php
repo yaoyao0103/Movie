@@ -110,10 +110,10 @@
 
         ////////HTML最外圈的code/////////
         echo
-        "<div class='movie-wrapper'>
+        "<div class='actor-wrapper'>
             <form method='post' action='' class='movie-input-form' id = 'actorForm'>
-                <div class = 'insert-info'>
-                    <a href='./index.php' class='confirm-info-btn'>取消</a>
+                <div class = 'actor-insert-info'>
+                    <a href='./index.php' class='delete-info-btn'>取消</a>
                     <a href='#' class='confirm-info-btn' onclick='newActor()'>新增演員</a>
                     <input type='submit' class='edit-info-btn' value='儲存' name='editActorBtn'>
                 </div>
@@ -145,8 +145,8 @@
 
                     ////////HTML演員卡/////////
                     echo
-                            "<div class='movie-form'>
-                                <label class='movie'>演員</label>
+                            "<div class='actor-form'>
+                                <div class='actor-label'><label class='movie'>演員</label></div>
                                 
                                 <div class='movie-group'>
                                     <label for='user' class='label'>First Name:</label>
@@ -161,7 +161,7 @@
                                     <input id='user' type='text' class='input' name = 'role$i' value='$actor_role''>
                                 </div>
                                 <div class = 'delete-info'>
-                                    <input type='submit' class='edit-info-btn' value='刪除'  name='deleteActorBtn$i'>
+                                    <input type='submit' class='delete-info-btn' value='刪除'  name='deleteActorBtn$i'>
                                 </div>
                             </div>
                         ";
@@ -185,7 +185,7 @@
 
         function newActor(){
             num++;
-            let content = "<label class='movie'>演員</label>\
+            let content = "<div class='actor-label'><label class='movie'>演員</label></div>\
                     <div class='movie-group'>\
                         <label for='user' class='label'>First Name:</label>\
                         <input id='user' type='text' class='input' name = 'firstName" + num + "'>\
@@ -205,7 +205,7 @@
             </div>";
             let child = document.createElement("div");
             child.innerHTML = content;
-            child.setAttribute("class", "movie-form");
+            child.setAttribute("class", "actor-form");
             actorForm.appendChild(child);
         }
         function deleteActor(element){

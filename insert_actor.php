@@ -30,7 +30,7 @@
 
         function newActor(){
             num++;
-            let content = "<label class='movie'>演員</label>\
+            let content = "<div class='actor-label'><label class='movie'>演員</label></div>\
                     <div class='movie-group'>\
                         <label for='user' class='label'>First Name:</label>\
                         <input id='user' type='text' class='input' name = 'firstName" + num + "'>\
@@ -50,7 +50,7 @@
             </div>";
             let child = document.createElement("div");
             child.innerHTML = content;
-            child.setAttribute("class", "movie-form");
+            child.setAttribute("class", "actor-form");
             actorForm.appendChild(child);
         }
 
@@ -68,10 +68,10 @@
     <div>
         <?php include_once('navbar_no_search.php'); ?>
     </div>
-    <div class='movie-wrapper'>
+    <div class='actor-wrapper'>
         <form method='post' action='./insert_actor_db.php' class='movie-input-form' id = 'actorForm'>
-            <div class = 'insert-info'>
-                <a href='./index.php' class='confirm-info-btn'>取消</a>
+            <div class = 'actor-insert-info'>
+                <a href='./index.php' class='delete-info-btn'>取消</a>
                 <a href="#" class="confirm-info-btn" onclick="newActor()">新增演員</a>
                 <a href="#" class="confirm-info-btn" onclick="document.getElementById('actorForm').submit();">下一步</a>
             </div>

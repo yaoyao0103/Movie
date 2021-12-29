@@ -34,7 +34,6 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin-left: 30px;
     margin-bottom: 30px;
-    float: left;
 }
 
 .actor-form {
@@ -48,13 +47,17 @@
     float: left;
 }
 
+.director {
+    margin-top: 50px;
+}
+
 .movie {
     font-weight: bold;
     font-size: 40px;
 }
 
 .movie-input-form {
-    text-align: center;
+    text-align: right;
 }
 
 .movie-group {
@@ -83,7 +86,6 @@
     display: flex;
     padding: 5px;
     justify-content: center;
-    width: 1200px;
 }
 
 .actor-insert-info {
@@ -147,7 +149,7 @@
     margin: 10px;
     background-color: #DEFFDE;
     color: black;
-    width: 30%;
+    width: 50%;
     text-align: center;
     border-radius: 5px;
     font-weight: bold;

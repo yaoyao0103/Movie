@@ -99,13 +99,12 @@
         $director_result = mysqli_query($conn, $sql);
         $numrows = mysqli_num_rows($director_result); // number of result
         $content = "<div class='movie-wrapper'>
-        <form method='post' action='./edit_director.php' class='movie-input-form' id = 'directorForm'>
-                
-                <div class = 'insert-info'>
-                    <a href='./index.php' class='confirm-info-btn'>取消</a>
-                    <input class='confirm-info-btn' type='submit' name = 'editDirectorBtn' value = '儲存'>
-                    <a href='./edit_actor.php' class='confirm-info-btn'>下一步</a>
-                </div>";
+                        <form method='post' action='./edit_director.php' class='movie-input-form director' id = 'directorForm'>
+                            <div class = 'insert-info'>
+                                <a href='./index.php' class='delete-info-btn'>取消</a>
+                                <input class='edit-info-btn' type='submit' name = 'editDirectorBtn' value = '儲存'>
+                                <a href='./edit_actor.php' class='confirm-info-btn'>下一步</a>
+                            </div>";
             
         if($numrows >= 1){
             $director = mysqli_fetch_array($director_result, MYSQLI_ASSOC);
@@ -120,7 +119,7 @@
                 $last_name = $director_info['director_last_name'];
                 $_SESSION['director_id'] = $director_id;
                 $content .= "<div class = 'movie-form'>
-                    <label class='movie'>導演</label>
+                    <div class='actor-label'><label class='movie'>導演</label></div>
                     <div class='notice'>$errormsg</div>
                     <input id='director_id' type='text' class='input' name = 'director_id' value = '$director_id' hidden>
                     <div class='movie-group'>
@@ -131,16 +130,17 @@
                         <label for='user' class='label'>Last Name:</label>
                         <input id='last_name' type='text' class='input' name = 'last_name' value = '$last_name' readonly='readonly'>
                     </div>
-                        <div class = 'delete-info'>
+                    <div class = 'delete-info'>
                         <input class='delete-info-btn' type='submit' name = 'deleteDirectorBtn' value = '刪除'>
                     </div>
                 <div class='hr'></div>
             </div>
-        </form></div>";
+        </form>
+        </div>";
             }
             else{
                 $content .= "<div class = 'movie-form'>
-                    <label class='movie'>導演</label>
+                    <div class='actor-label'><label class='movie'>導演</label></div>
                     <div class='notice'>$errormsg</div>
                     <input id='director_id' type='text' class='input' name = 'director_id' value = '$director_id' hidden>
                     <div class='movie-group'>
@@ -161,7 +161,7 @@
         }
         else{
             $content .= "<div class = 'movie-form'>
-                    <label class='movie'>導演</label>
+                    <div class='actor-label'><label class='movie'>導演</label></div>
                     <div class='notice'>$errormsg</div>
                     <input id='director_id' type='text' class='input' name = 'director_id' value = '$director_id' hidden>
                     <div class='movie-group'>
@@ -172,7 +172,7 @@
                         <label for='user' class='label'>Last Name:</label>
                         <input id='last_name' type='text' class='input' name = 'last_name'>
                     </div>
-                        <div class = 'delete-info'>
+                    <div class = 'delete-info'>
                         <input class='delete-info-btn' type='submit' name = 'deleteDirectorBtn' value = '刪除'>
                     </div>
                 <div class='hr'></div>

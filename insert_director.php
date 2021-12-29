@@ -42,7 +42,7 @@
             $directorLname =$_POST['directorLname'];
             if($directorFname){
                 if($directorLname){
-                    $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
+                    $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
                     $query = mysqli_query($conn, "SELECT * FROM directors WHERE director_first_name='$directorFname' and director_last_name='$directorLname' "); // query for matching directorname
                     $numrows = mysqli_num_rows($query); // number of result
                     $numofid=0;

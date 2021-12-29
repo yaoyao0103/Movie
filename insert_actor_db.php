@@ -10,9 +10,9 @@
         if($lastName){
             if($firstName){
                 if($role){
-                    $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
-                    $query = mysqli_query($conn, "SELECT * FROM actors WHERE actor_first_name='$firstName' and actor_last_name='$lastName' "); // query for matching directorname
-                    $numrows = mysqli_num_rows($query); // number of result
+                    $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
+                    $checkQuery = mysqli_query($conn, "SELECT * FROM actors WHERE actor_first_name='$firstName' and actor_last_name='$lastName' "); // query for matching directorname
+                    $numrows = mysqli_num_rows($checkQuery); // number of result
                     $numOfId=0;
                     $actorId=0;
                     if($numrows==0){
@@ -31,6 +31,10 @@
                         }else
                             echo "An error has occurred. Your actor ". $firstName . $lastName . " was not created";
                             
+                    }
+                    else{
+                        $row = mysqli_fetch_array($checkQuery, MYSQLI_ASSOC);
+                        $actorId = $row['actor_id'];
                     }
                     mysqli_query($conn, "INSERT INTO movie_casts VALUES($movieId, $actorId, '$role')");// query for creating director
                     $query = mysqli_query($conn,"SELECT * FROM movie_casts WHERE movie_id = $movieId and actor_id = $actorId");

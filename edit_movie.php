@@ -29,7 +29,7 @@
     </div>
     <?php
         $errormsg = $movieid;
-        $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
+        $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
         if($_POST['editMovieBtn']){
             $moviename= $_POST['movieName'];
             $moviedate =$_POST['year'];

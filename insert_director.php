@@ -42,9 +42,9 @@
             $directorLname =$_POST['directorLname'];
             if($directorFname){
                 if($directorLname){
-                    $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
-                    $query = mysqli_query($conn, "SELECT * FROM directors WHERE director_first_name='$directorFname' and director_last_name='$directorLname' "); // query for matching directorname
-                    $numrows = mysqli_num_rows($query); // number of result
+                    $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
+                    $checkQuery = mysqli_query($conn, "SELECT * FROM directors WHERE director_first_name='$directorFname' and director_last_name='$directorLname' "); // query for matching directorname
+                    $numrows = mysqli_num_rows($checkQuery); // number of result
                     $numofid=0;
                     $directorid=0;
                     if($numrows==0){
@@ -63,6 +63,10 @@
                         }else
                             $errormsg = "An error has occurred. Your director was not created";
                             
+                    }
+                    else{
+                        $row = mysqli_fetch_array($checkQuery, MYSQLI_ASSOC);
+                        $directorid = $row['director_id'];
                     }
                     mysqli_query($conn, "INSERT INTO movie_directors VALUES($directorid,'$movieid')");// query for creating director
                     $query = mysqli_query($conn,"SELECT * FROM movie_directors WHERE director_id=$directorid and movie_id=$movieid");

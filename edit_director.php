@@ -22,7 +22,7 @@
 </head>
 <body>
     <?php 
-        $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
+        $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
         if($_POST['editDirectorBtn']){
             $director_id = $_POST['director_id'];
             $first_name = $_POST['first_name'];
@@ -53,16 +53,20 @@
                         else{
                             $errormsg = "error";
                         }
-                        $sql = "INSERT INTO movie_directors VALUES($directorid, $movieId)";
-                        mysqli_query($conn, $sql);
-                        $insert_result = mysqli_query($conn, "SELECT * FROM movie_directors WHERE director_id=$directorid");
-                        $numrows = mysqli_num_rows($insert_result); // number of result
-                        if($numrows == 1){
-                            $errormsg .= "-success";
-                        }
-                        else{
-                            $errormsg .= "-error";
-                        }
+                    }
+                    else{
+                        $row = mysqli_fetch_array($director_result, MYSQLI_ASSOC);
+                        $directorid = $row['director_id'];
+                    }
+                    $sql = "INSERT INTO movie_directors VALUES($directorid, $movieId)";
+                    mysqli_query($conn, $sql);
+                    $insert_result = mysqli_query($conn, "SELECT * FROM movie_directors WHERE director_id=$directorid");
+                    $numrows = mysqli_num_rows($insert_result); // number of result
+                    if($numrows == 1){
+                        $errormsg .= "-success";
+                    }
+                    else{
+                        $errormsg .= "-error";
                     }
                 }
                 else{
@@ -75,7 +79,7 @@
         }
         else if($_POST['deleteDirectorBtn']){
             $director_id = $_SESSION['director_id'];
-            $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
+            $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
             $sql = "DELETE FROM directors WHERE director_id = $director_id";
             $query = mysqli_query($conn, $sql);
             $sql = "SELECT * FROM directors WHERE director_id = $director_id";

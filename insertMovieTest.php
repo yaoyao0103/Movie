@@ -1,5 +1,5 @@
 <?php
-    $conn = mysqli_connect("localhost", "plusxk2", "a147896325", "movie_db"); // connect to DB
+    $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
     /*$sql = "INSERT INTO movies VALUES( 1, '阿凡達', 2009, 170, '科幻')";
     $result = mysqli_query($conn, $sql); 
     $sql = "INSERT INTO directors VALUES( 1, '詹姆斯', '卡麥隆')";

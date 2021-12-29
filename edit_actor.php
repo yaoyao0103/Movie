@@ -30,7 +30,7 @@
         <?php include_once('navbar_no_search.php'); ?>
     </div>
      <?php
-        $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
+        $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
         ////////儲存/////////
         if($_POST['editActorBtn']){
             $lastNamet =$_POST['lastName2'];
@@ -46,7 +46,7 @@
                             if($actornum>=1){//原本就有的actor
                                 $actor = mysqli_fetch_array($actor_result, MYSQLI_ASSOC);
                                 $actorid=$actor['actor_id'];
-                                $query = mysqli_query($conn, "UPDATE movie_casts SET role='$role' WHERE movie_id=$movieid and actor_id=$actorid"); // query for update cast
+                                $query = mysqli_query($conn, "INSERT into movie_casts VALUES( $movieid, $actorid, '$role')"); // query for update cast
                                 if(!$query){ 
                                     $errormsg='Can not save';
                                 }else
@@ -122,7 +122,7 @@
                 <div class='notice'>$errormsg</div>";
         
 
-         $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
+         $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
          $cast_result=mysqli_query($conn, "SELECT * FROM movie_casts WHERE movie_id=$movieid");
          $castnum = mysqli_num_rows($cast_result); // number of result
          //setcookie(,$castnum);

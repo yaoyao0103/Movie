@@ -22,7 +22,7 @@
 </head>
 <body>
     <?php 
-        $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
+        $conn = mysqli_connect("localhost", "plusxk2", "a147896325", "movie_db"); // connect to DB
         if($_POST['editDirectorBtn']){
             $director_id = $_POST['director_id'];
             $first_name = $_POST['first_name'];
@@ -79,7 +79,7 @@
         }
         else if($_POST['deleteDirectorBtn']){
             $director_id = $_SESSION['director_id'];
-            $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
+            $conn = mysqli_connect("localhost", "plusxk2", "a147896325", "movie_db"); // connect to DB
             $sql = "DELETE FROM directors WHERE director_id = $director_id";
             $query = mysqli_query($conn, $sql);
             $sql = "SELECT * FROM directors WHERE director_id = $director_id";
@@ -122,7 +122,7 @@
                 $first_name = $director_info['director_first_name'];
                 $last_name = $director_info['director_last_name'];
                 $_SESSION['director_id'] = $director_id;
-                $content .= "<div class = 'movie-form'>
+                $content .= "<div class = 'director-form'>
                     <div class='actor-label'><label class='movie'>導演</label></div>
                     <div class='notice'>$errormsg</div>
                     <input id='director_id' type='text' class='input' name = 'director_id' value = '$director_id' hidden>

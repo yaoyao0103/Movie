@@ -10,7 +10,7 @@
         if($lastName){
             if($firstName){
                 if($role){
-                    $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
+                    $conn = mysqli_connect("localhost", "plusxk2", "a147896325", "movie_db"); // connect to DB
                     $checkQuery = mysqli_query($conn, "SELECT * FROM actors WHERE actor_first_name='$firstName' and actor_last_name='$lastName' "); // query for matching directorname
                     $numrows = mysqli_num_rows($checkQuery); // number of result
                     $numOfId=0;

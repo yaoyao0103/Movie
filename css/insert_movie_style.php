@@ -4,14 +4,16 @@
 
 .movie-wrapper {
     position: relative;
-    padding: 40px;
-    padding-left: 140px;
-    max-width: 1400px;
+    padding: 5%;
+    padding-left:auto;
+    padding-right:auto;
+    max-width: 92%;
     text-align: center;
     display:flex;
     justify-content: center;
     align-items: center;
 }
+
 
 .actor-wrapper {
     position: relative;
@@ -27,13 +29,24 @@
 }
 
 .movie-form {
-    padding: 25px;
+    
+    padding: 2%;
     border: solid #FFFFAB;
     border-width: 1px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin-left: 30px;
-    margin-bottom: 30px;
+    margin-bottom:  30px;
+}
+.director-form {
+    
+    padding: 2%;
+    border: solid #FFFFAB;
+    border-width: 1px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-left: 5px;
+    margin-bottom:  30px;
 }
 
 .actor-form {
@@ -56,8 +69,9 @@
     font-size: 40px;
 }
 
+
 .movie-input-form {
-    text-align: right;
+    text-align:  center;
 }
 
 .movie-group {
@@ -71,7 +85,7 @@
 }
 
 .label {
-    
+    font-size: 18px;
 }
 
 .input {
@@ -79,13 +93,16 @@
     border: 1px white solid;
     background-color: rgb(35,35,35);
     color: white;
+    font-size:18px;
+    width: 62%;
 }
 
 .insert-info {
     position: relative;
     display: flex;
-    padding: 5px;
+    padding: 15px;
     justify-content: center;
+    margin-left: 4px;
 }
 
 .actor-insert-info {
@@ -115,6 +132,11 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 5px;
     transition: all .35s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    
 }
 
 .insert-info-btn:hover {
@@ -137,6 +159,10 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 5px;
     transition: all .35s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content:center;
 }
 
 .delete-info-btn:hover {
@@ -158,6 +184,12 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 5px;
     transition: all .35s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+
+    
 }
 
 .edit-info-btn:hover {
@@ -179,10 +211,83 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 5px;
     transition: all .35s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content:center;
 }
 
 .confirm-info-btn:hover {
     background-color: rgb(35,35,35);
     color: #FFFFAB;
     text-decoration: none;
+}
+
+@media screen and (max-width:600px) { 
+    .movie {
+        font-weight: bold;
+        font-size: 30px;
+    }
+    .label {
+        font-size: 12px;
+    }
+    .input {
+        border-radius: 5px;
+        border: 1px white solid;
+        background-color: rgb(35,35,35);
+        color: white;
+        font-size:12px;
+        width: 57%;
+    }
+    .director-form {
+        padding: 2%;
+        border: solid #FFFFAB;
+        border-width: 1px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        margin-left: 10px;
+        margin-bottom:  30px;
+    }
+    .insert-info {
+        position: relative;
+        display: flex;
+        padding: 15px;
+        justify-content: center;
+        margin-left: 8px;
+    }
+    
+}
+@media screen and (max-width:300px) { 
+    .movie {
+        font-weight: bold;
+        font-size:25px;
+    }
+    .label {
+        font-size: 12px;
+    }
+    .input {
+        border-radius: 5px;
+        border: 1px white solid;
+        background-color: rgb(35,35,35);
+        color: white;
+        font-size:12px;
+        width: 50%;
+    }
+    .director-form {
+        padding: 2%;
+        border: solid #FFFFAB;
+        border-width: 1px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        margin-left: 20px;
+        margin-bottom:  30px;
+    }
+    .insert-info {
+        position: relative;
+        display: flex;
+        padding: 15px;
+        justify-content: center;
+        margin-left: 12px;
+    }
+    
 }

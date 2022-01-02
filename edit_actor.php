@@ -30,7 +30,7 @@
         <?php include_once('navbar_no_search.php'); ?>
     </div>
      <?php
-        $conn = mysqli_connect("localhost", "plusxk2", "a147896325", "movie_db"); // connect to DB
+        $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
         ////////儲存/////////
         if($_POST['editActorBtn']){
             $lastNamet =$_POST['lastName2'];
@@ -122,7 +122,7 @@
                 <div class='notice'>$errormsg</div>";
         
 
-         $conn = mysqli_connect("localhost","plusxk2", "a147896325","movie_db"); // connect to DB
+         $conn = mysqli_connect("localhost","root", "root","movie_db"); // connect to DB
          $cast_result=mysqli_query($conn, "SELECT * FROM movie_casts WHERE movie_id=$movieid");
          $castnum = mysqli_num_rows($cast_result); // number of result
          //setcookie(,$castnum);

@@ -45,7 +45,7 @@
                     if($movietime){
                         if($moviegenres){
                             if($movieurl){
-                                $conn = mysqli_connect("localhost", "plusxk2", "a147896325", "movie_db"); // connect to DB
+                                $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
                                 $query = mysqli_query($conn, "SELECT * FROM movies WHERE movie_title='$moviename'"); // query for matching moviename
                                 $numrows = mysqli_num_rows($query); // number of result
                                 if($numrows == 0){ // have no result: there is no exist the same moviename
@@ -111,7 +111,7 @@
                  </div>
                  <div class = 'insert-info'>
                      <a href='./index.php' class='delete-info-btn'>取消</a>
-                     <input type='submit' class='insert-info-btn' value='下一步' name='insertBtn'>
+                     <input type='submit' class='confirm-info-btn' value='繼續' name='insertBtn'>
                  </div>
              </form>
          </div>

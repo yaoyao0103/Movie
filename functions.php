@@ -1,6 +1,6 @@
 <?php 
     function generateCards($sql){
-        $conn = mysqli_connect("localhost", "plusxk2", "a147896325", "movie_db"); // connect to DB
+        $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
         mysqli_set_charset($conn,"utf8");
 
         $movie_result = mysqli_query($conn, $sql); // get result

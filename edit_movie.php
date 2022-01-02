@@ -28,7 +28,7 @@
          <?php include_once('navbar_no_search.php'); ?>
     </div>
     <?php
-        $conn = mysqli_connect("localhost", "plusxk2", "a147896325", "movie_db"); // connect to DB
+        $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
         if($_POST['editMovieBtn']){
             $moviename= $_POST['movieName'];
             $moviedate =$_POST['year'];
@@ -111,7 +111,7 @@
                  <div class='insert-info'>
                     <a href='./index.php' class='delete-info-btn'>取消</a>
                     <input type='submit' class='edit-info-btn' value='儲存' name='editMovieBtn'>
-                    <a href='./edit_director.php' class='insert-info-btn'>演員</a>
+                    <a href='./edit_director.php' class='insert-info-btn'>繼續</a>
                 </div> 
                 <div class='hr'></div>
              </form>

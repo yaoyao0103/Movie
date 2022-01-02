@@ -73,7 +73,7 @@
             <div class = 'actor-insert-info'>
                 <a href='./index.php' class='delete-info-btn'>取消</a>
                 <a href="#" class="confirm-info-btn" onclick="newActor()">新增演員</a>
-                <a href="#" class="confirm-info-btn" onclick="document.getElementById('actorForm').submit();">下一步</a>
+                <a href="#" class="confirm-info-btn" onclick="document.getElementById('actorForm').submit();">繼續</a>
             </div>
         </form>
     </div>

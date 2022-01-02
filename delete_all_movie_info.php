@@ -5,7 +5,7 @@
     $isAdmin = $_SESSION['isAdmin'];
     $movieId = $_SESSION['movieId'];
     
-    $conn = mysqli_connect("localhost", "plusxk2", "a147896325", "movie_db"); // connect to DB
+    $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
     
     $delete_movies_cast_sql = "DELETE FROM movie_casts WHERE movie_id=$movieId";
     $delete_movies_director_sql = "DELETE FROM movie_directors WHERE movie_id=$movieId";

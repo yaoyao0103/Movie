@@ -22,7 +22,7 @@
 </head>
 <body>
     <?php 
-        $conn = mysqli_connect("localhost", "plusxk2", "a147896325", "movie_db"); // connect to DB
+        $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
         if($_POST['editDirectorBtn']){
             $director_id = $_POST['director_id'];
             $first_name = $_POST['first_name'];
@@ -79,7 +79,7 @@
         }
         else if($_POST['deleteDirectorBtn']){
             $director_id = $_SESSION['director_id'];
-            $conn = mysqli_connect("localhost", "plusxk2", "a147896325", "movie_db"); // connect to DB
+            $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
             $sql = "DELETE FROM directors WHERE director_id = $director_id";
             $query = mysqli_query($conn, $sql);
             $sql = "SELECT * FROM directors WHERE director_id = $director_id";
@@ -107,7 +107,7 @@
                             <div class = 'insert-info'>
                                 <a href='./index.php' class='delete-info-btn'>取消</a>
                                 <input class='edit-info-btn' type='submit' name = 'editDirectorBtn' value = '儲存'>
-                                <a href='./edit_actor.php' class='confirm-info-btn'>下一步</a>
+                                <a href='./edit_actor.php' class='confirm-info-btn'>繼續</a>
                             </div>";
             
         if($numrows >= 1){

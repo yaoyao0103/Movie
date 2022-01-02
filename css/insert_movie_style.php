@@ -109,7 +109,7 @@
     position: relative;
     display: flex;
     padding: 30px;
-    width: 1200px;
+    width: 80vw;
     justify-content: center;
 }
 
@@ -224,6 +224,22 @@
 }
 
 @media screen and (max-width:600px) { 
+    .actor-wrapper {
+        position: relative;
+        padding: 10px 40px;
+        text-align: center;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .actor-form {
+        padding: 10px;
+        border: solid #FFFFAB;
+        border-width: 1px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        margin: 20px;
+    }
     .movie {
         font-weight: bold;
         font-size: 30px;
@@ -255,9 +271,30 @@
         justify-content: center;
         margin-left: 8px;
     }
-    
+    .actor-insert-info {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+    }
 }
 @media screen and (max-width:300px) { 
+    .actor-wrapper {
+        position: relative;
+        padding: 10px 40px;
+        text-align: center;
+        display:flex;
+    }
+    .actor-form {
+        padding: 3px;
+        border: solid #FFFFAB;
+        border-width: 1px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        margin: 15px;
+    }
     .movie {
         font-weight: bold;
         font-size:25px;
@@ -288,6 +325,14 @@
         padding: 15px;
         justify-content: center;
         margin-left: 12px;
+    }
+    .actor-insert-info {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 3px;
+        justify-content: center;
+        align-items: center;
     }
     
 }

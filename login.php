@@ -85,11 +85,11 @@
                             <div class='notice'>$errormsg</div>
                             <div class='group'>
                                 <label for='user' class='label'>Username:</label>
-                                <input id='user' type='text' class='input' name = 'username'>
+                                <input id='user' type='text' class='login-input' name = 'username'>
                             </div>
                             <div class='group'>
                                 <label for='pass' class='label'>Password :</label>
-                                <input id='pass' type='password' class='input' data-type='password' name='password'>
+                                <input id='pass' type='password' class='login-input' data-type='password' name='password'>
                             </div>
                             <div>
                                 <input type='submit' class='button' value='Sign In' name='loginBtn' >

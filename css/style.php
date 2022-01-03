@@ -29,12 +29,13 @@ body {
 
 .wrapper {
 	position: relative;
-	max-width: 1100px;
 	margin: 0 auto;
+	text-align: center;
 	padding: 60px 20px;
 }
 
 .card {
+text-align: left;
 display: inline-flex;
 align-items: center;
 justify-content: center;
@@ -46,7 +47,7 @@ padding: 20px;
 box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
 background-size: cover;
 cursor: pointer;
-margin: 0 100px 60px 0;
+margin: 0 3em 3em 3em;
 }
 .card:before {
 content: '';

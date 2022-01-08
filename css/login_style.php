@@ -52,8 +52,7 @@
 .login-input {
     border-radius: 5px;
     border: 1px white solid;
-    
-    color: white;
+    color: black;
     font-size:18px;
     width: 62%;
 }
@@ -115,7 +114,7 @@
     .login-input {
         border-radius: 5px;
         border: 1px white solid;
-        color: white;
+        color: black;
         font-size:12px;
         width: 57%;
     }
@@ -164,7 +163,7 @@
     .login-input {
         border-radius: 5px;
         border: 1px white solid;
-        color: white;
+        color:black;
         font-size:12px;
         width: 50%;
     }

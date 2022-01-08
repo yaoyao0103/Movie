@@ -23,7 +23,7 @@ body {
 }
 
 .input-group {
-	width: 450px;
+	width: 50%;
 	color: white;
 }
 
@@ -243,12 +243,17 @@ label.star:before {
 
 #search-field {
 	height: 40px;
-	width: 400px;
+	width: 30%;
 }
 
 #search-btn {
-	font-size: 15px;
+	font-size: 1em;
 }
+
+.input-group-append{
+	width: 10%;
+}
+
 
 .insert-movie {
 	position: fixed;

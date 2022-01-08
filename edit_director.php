@@ -22,7 +22,7 @@
 </head>
 <body>
     <?php 
-        $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
+        $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
         if($_POST['editDirectorBtn']){
             $director_id = $_POST['director_id'];
             $first_name = $_POST['first_name'];
@@ -49,7 +49,6 @@
                         if($numrows == 1){
                             $errormsg = "success";
                         }
-                       
                         else{
                             $errormsg = "error";
                         }
@@ -79,7 +78,7 @@
         }
         else if($_POST['deleteDirectorBtn']){
             $director_id = $_SESSION['director_id'];
-            $conn = mysqli_connect("localhost", "root", "root", "movie_db"); // connect to DB
+            $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
             $sql = "DELETE FROM directors WHERE director_id = $director_id";
             $query = mysqli_query($conn, $sql);
             $sql = "SELECT * FROM directors WHERE director_id = $director_id";

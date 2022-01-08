@@ -9,7 +9,7 @@
     $sql = "CREATE trigger check_rating_bound after insert on ratings
         referencing new row as nrow
         for each row
-        when star > 5 or star < 1
+        when nrow.star > 5 or nrow.star < 1
         begin
             rollback
         end;";

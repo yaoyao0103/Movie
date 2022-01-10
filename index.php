@@ -148,7 +148,9 @@
             <div id = 'popup_genres'></div>
             <div id = 'popup_directors'></div>
             <div id = 'popup_casts'></div>
-            <div class="stars" id = 'popup_stars'>
+
+            <?php
+               if($username) echo '<div class="stars" id = \'popup_stars\'>
                <input class="star star-5" id="star-5" type="radio" name="star" onclick="rating(5)"/>
                <label class="star star-5" for="star-5"></label>
                <input class="star star-4" id="star-4" type="radio" name="star" onclick="rating(4)" />
@@ -159,7 +161,9 @@
                <label class="star star-2" for="star-2"></label>
                <input class="star star-1" id="star-1" type="radio" name="star" onclick="rating(1)" />
                <label class="star star-1" for="star-1"></label>
-            </div>
+            </div>';
+            
+            ?>
             <?php 
                if($isAdmin) echo "
                <div id = 'popup_delete_btn' class = 'popup_btn'><a href='./delete_all_movie_info.php' onclick = ''>Delete</a></div>

@@ -33,21 +33,15 @@
                         if($retypePassword){
                             if($password == $retypePassword){
                                 $conn = mysqli_connect("localhost", "yao", "1234", "movie_db"); // connect to DB
-                                $query = mysqli_query($conn, "SELECT * FROM users WHERE username='$username'"); // query for matching username
-                                $numrows = mysqli_num_rows($query); // number of result
-                                if($numrows == 0){ // have no result: there is no exist the same username
-                                    // query for insert user info
-                                    mysqli_query($conn, "INSERT INTO users VALUES('$username', '$password', 0)");
-                                    $query = mysqli_query($conn, "SELECT * FROM users WHERE username = '$username'"); // query for matching username
-                                    $numrows = mysqli_num_rows($query); // number of result
-                                    if($numrows == 1){ // have one result
-                                        $errormsg = "Registration success";
-                                    }
-                                    else
-                                        $errormsg = "An error has occurred. Your account was not created";
+                                $error = "";
+                                mysqli_query($conn, "INSERT INTO users VALUES('$username', '$password', 0)" );
+                                $error = mysqli_error($conn);
+                                if($error){
+                                    $errormsg = $error;
                                 }
-                                else
-                                    $errormsg = "Their is already a user with that username";
+                                else{
+                                    $errormsg = "Registration success";
+                                }
                             }
                             else
                                 $errormsg = "Your passwords did not match.";

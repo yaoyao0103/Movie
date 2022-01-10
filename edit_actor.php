@@ -44,13 +44,27 @@
                             $actor_result=mysqli_query($conn, "SELECT * FROM actors WHERE actor_first_name='$firstName' and actor_last_name='$lastName'");
                             $actornum = mysqli_num_rows($actor_result); // number of result
                             if($actornum>=1){//原本就有的actor
+
                                 $actor = mysqli_fetch_array($actor_result, MYSQLI_ASSOC);
                                 $actorid=$actor['actor_id'];
-                                $query = mysqli_query($conn, "INSERT into movie_casts VALUES( $movieid, $actorid, '$role')"); // query for update cast
-                                if(!$query){ 
-                                    $errormsg='Can not save';
-                                }else
-                                    $errormsg='Save success';
+                                $cast_result=mysqli_query($conn, "SELECT * FROM movie_casts WHERE actor_id = $actorid ");
+                                $castNum = mysqli_num_rows($cast_result); // number of result
+                                if($castNum>=1){
+                                    $query = mysqli_query($conn, "UPDATE movie_casts SET role = '$role' WHERE actor_id = $actorid"); // query for update cast
+                                    if(!$query){ 
+                                        $errormsg='Can not update ' . $firstName;
+                                    }else
+                                        $errormsg='Save success';
+                                }
+                                else{
+                                    $query = mysqli_query($conn, "INSERT into movie_casts VALUES( $movieid, $actorid, '$role')"); // query for update cast
+                                    if(!$query){ 
+                                        $errormsg='Can not insert ' . $firstName;
+                                    }else
+                                        $errormsg='Save success';
+                                }
+                                
+                                
                             }
                             if($actornum==0){//新增的actor
                                 $numOfId=0;

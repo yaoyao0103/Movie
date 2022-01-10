@@ -17,7 +17,7 @@
                 $movie_genres = $movie['movie_genres'];
                 $photoURL = $movie['photoURL'];
 
-                $castSql = "SELECT A.* from movie_casts as MC natural join actors as A where movie_id = $movie_id";
+                $castSql = "SELECT * from movie_casts as MC natural join actors as A where movie_id = $movie_id";
                 $casts = mysqli_query($conn, $castSql);
                 $tempCast = [];
                 while($row = mysqli_fetch_assoc($casts))

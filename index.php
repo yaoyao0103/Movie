@@ -58,7 +58,7 @@
 
          let castStr = "<ul>";
          for(let row of cast){
-            castStr += "<li>"+ row.actor_first_name + " " + row.actor_last_name;
+            castStr += "<li>"+ "<span style='color:#FFE66F; font-size: 1.2em;'>Role: </span>" + row.role + "<span style='color:#FFE66F; font-size: 1.2em;'>  Actor name:</span> " +  row.actor_first_name + " " + row.actor_last_name;
          }
          castStr += "</ul>";
          let directorStr = "<ul>";
